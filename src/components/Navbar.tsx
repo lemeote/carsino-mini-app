@@ -14,27 +14,28 @@ interface Route {
 export const route: Route[] = [
   {
     path: "/",
-    icon: (color: string) => <Icons.navigator.home />,
+    title: "Home",
+    icon: (color: string) => <Icons.navigator.home color={color} />,
   },
   {
     path: "/games",
     title: "Games",
-    icon: (color: string) => <Icons.navigator.games />,
+    icon: (color: string) => <Icons.navigator.games color={color} />,
   },
   {
     path: "/chat",
     title: "Chat",
-    icon: (color: string) => <Icons.navigator.chat />,
+    icon: (color: string) => <Icons.navigator.chat color={color} />,
   },
   {
     path: "/task",
     title: "Task",
-    icon: (color: string) => <Icons.navigator.task />,
+    icon: (color: string) => <Icons.navigator.task color={color} />,
   },
   {
     path: "/leaderboard",
     title: "LeaderBoard",
-    icon: (color: string) => <Icons.navigator.leaderboard />,
+    icon: (color: string) => <Icons.navigator.leaderboard color={color} />,
   },
 ];
 
@@ -86,8 +87,8 @@ export const Navbar = () => {
           >
             <div
               className={`flex flex-col w-[52px] h-[52px] rounded-xl justify-center items-center ${active === index ? "bg-[#7819F3]" : "bg-transparent"}`} >
-              {item.icon(active === index ? "#7819F3" : "#1D1135")}
-            <span className={`text-xs ${item.path == '/' ? "hidden":"block"}`}>{item.title}</span>
+              {item.icon(active === index ? "#DBD0E8" : "#584D74")}
+              <span className={`text-xs ${item.path == pathname ? "hidden":"block"}`}>{item.title}</span>
             </div>
           </div>
         );
