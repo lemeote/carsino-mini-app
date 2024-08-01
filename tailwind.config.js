@@ -56,6 +56,7 @@ module.exports = {
         basic: "#1E123A",
         "border-color": "#34284E",
         button: "#291D45",
+        bgcolor: "#160C30",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -81,5 +82,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"),  require("tw-elements/plugin.cjs")],
+  plugins: [require("tailwindcss-animate"), require("tw-elements/plugin.cjs")],
 };
