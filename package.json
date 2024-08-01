@@ -22,6 +22,7 @@
     "flowbite": "^2.4.1",
     "lucide-react": "^0.417.0",
     "next": "14.2.4",
+    "nextjs-template": "file:",
     "normalize.css": "^8.0.1",
     "react": "^18",
     "react-dom": "^18",
