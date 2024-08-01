@@ -3,7 +3,7 @@ import { IoMdArrowDropleft } from "react-icons/io";
 import { IoMdArrowDropright } from "react-icons/io";
 
 import { Icons } from "./Icons"
-import { keno_card, dice_card } from "../../assets";
+import { keno_card, dice_card, plinko_card } from "../../assets";
 
 const Header = () => {
   return (
@@ -31,10 +31,10 @@ const GamesList = () => {
   return (
     <div className="flex flex-col w-full gap-6">
       <Header />
-      <main className="flex flex-wrap justify-center w-full gap-2 ">
+      <main className="flex flex-wrap justify-between w-full gap-2 ">
         <Image src={keno_card} alt="" width={150}/>
         <Image src={dice_card} alt="" width={150}/>
-        <Image src={dice_card} alt="" width={150}/>
+        <Image src={plinko_card} alt="" width={150}/>
       </main>
     </div>
   );

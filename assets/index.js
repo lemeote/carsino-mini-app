@@ -10,12 +10,11 @@ import nav_games_icon from "../assets/nav_games_icon.svg";
 import nav_home_icon from "../assets/nav_home_icon.svg";
 import nav_leaderboard_icon from "../assets/nav_leaderboard_icon.svg";
 import nav_task_icon from "../assets/nav_task_icon.svg";
-import user1 from "../assets/user1.png";
-import user2 from "../assets/user2.png";
 import noti_ico from "../assets/noti_ico.svg";
 import user_avatar from "../assets/user_avatar.svg";
 import gems_icon from "../assets/gems_icon.svg"
 import gems from "../assets/gems.png";
+import plinko_card from "../assets/plinko.png"
 
 export {
   diamond_icon,
@@ -30,10 +29,9 @@ export {
   nav_home_icon,
   nav_leaderboard_icon,
   nav_task_icon,
-  user1,
-  user2,
   noti_ico,
   user_avatar,
   gems_icon,
   gems,
+  plinko_card,
 }
