@@ -16,12 +16,16 @@ const Header: React.FC<ImageProps> = ({ imageSrc }) => {
     router.push('/notification');
   }
 
+  const backButton = () => {
+    router.back();
+  }
+
   return (
     <div className="flex items-center justify-between w-full">
       {
         imageSrc === logo ?
           <Image src={imageSrc} alt="" width={96} height={38} />
-          : <div className="flex items-center justify-center w-12 h-12 bg-button rounded-xl">
+          : <div className="flex items-center justify-center w-12 h-12 bg-button rounded-xl" onClick={backButton}>
             <FaArrowLeft size={24} />
           </div>
       }
@@ -31,9 +35,15 @@ const Header: React.FC<ImageProps> = ({ imageSrc }) => {
           <Icons.headerButton.diamond_amount />
           <span>0,567889</span>
         </div>
+        { imageSrc === logo ?
         <div className="flex items-center justify-center w-12 h-12 border bg-button rounded-xl border-border-color" onClick={notification}>
           <Icons.headerButton.noti_button />
         </div>
+        :
+          <div className="flex items-center justify-center w-12 h-12 border bg-button rounded-xl border-border-color cursor-none">
+            <Icons.headerButton.noti_button />
+          </div>
+        }
         <div className="flex items-center justify-center w-12 h-12 border bg-button rounded-xl border-border-color">
           <Icons.headerButton.user_avatar />
         </div>

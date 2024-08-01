@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="w-full h-full p-6 bg-bgcolor">
+      <div className="w-full h-full p-6 text-white bg-bgcolor">
         <Header imageSrc={logo} />
         <main className="flex flex-col items-center gap-10 mt-10">
           {/* <MainCarousel /> */}
