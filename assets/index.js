@@ -16,7 +16,15 @@ import gems_icon from "../assets/gems_icon.svg"
 import gems from "../assets/gems.png";
 import ico_up from "../assets/ico_up.png";
 import ico_down from "../assets/ico_down.png";
-import plinko_card from "../assets/plinko.png"
+import plinko_card from "../assets/plinko.png";
+import ico_chart from "../assets/ico_chart.png";
+import ico_earning from '../assets/ico_earning.png';
+import ico_flower from "../assets/ico_flower.png"
+import ico_gift from "../assets/ico_flower.png"
+import ico_medal from "../assets/ico_medal.png"
+import ico_prize from "../assets/ico_prize.png"
+import ico_warining from "../assets/ico_warning.png"
+import ico_bell from "../assets/ico_bell.png"
 
 export {
   diamond_icon,
@@ -38,4 +46,12 @@ export {
   ico_up,
   ico_down,
   plinko_card,
+  ico_chart,
+  ico_earning,
+  ico_flower,
+  ico_gift,
+  ico_medal,
+  ico_prize,
+  ico_warining,
+  ico_bell,
 }
