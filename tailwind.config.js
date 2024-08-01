@@ -56,6 +56,7 @@ module.exports = {
         basic: "#1E123A",
         "border-color": "#34284E",
         button: "#291D45",
+        bgcolor: "#160C30",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -76,16 +77,10 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-      width: {
-        "nav-button": "52px",
-      },
-      height: {
-        "nav-button": "52px",
-      },
       fontFamily: {
         default: "Exo 2",
       },
     },
   },
-  plugins: [require("tailwindcss-animate"),  require("tw-elements/plugin.cjs")],
+  plugins: [require("tailwindcss-animate"), require("tw-elements/plugin.cjs")],
 };
