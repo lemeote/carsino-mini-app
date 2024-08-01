@@ -25,6 +25,7 @@ import ico_medal from "../assets/ico_medal.png"
 import ico_prize from "../assets/ico_prize.png"
 import ico_warining from "../assets/ico_warning.png"
 import ico_bell from "../assets/ico_bell.png"
+import ico_solana from "../assets/ico_solana.png"
 
 export {
   diamond_icon,
@@ -54,4 +55,5 @@ export {
   ico_prize,
   ico_warining,
   ico_bell,
+  ico_solana,
 }

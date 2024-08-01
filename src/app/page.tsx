@@ -1,15 +1,12 @@
 'use client'
 
-
-import Image from "next/image";
-
 import Header from "@/components/Header";
 import MainGames from "@/components/main-games";
 import Carousel from "@/components/Carousel";
-import { logo, main, gems, dice_card } from "../../assets";
 import MainEarnGems from "@/components/main-earn-gems";
 import MainLeaderBoard from "@/components/main-leaderboard";
 import { Navbar } from "@/components/Navbar";
+import { logo, main, gems } from "../../assets";
 
 export default function Home() {
 
