@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 import { Icons } from "./Icons"
-import { user1, user2, user_avatar } from "../../assets";
+import { ico_up, ico_down, user_avatar } from "../../assets";
 import React from "react";
 
 const userList = [
@@ -79,7 +79,7 @@ const RankItem: React.FC<UserInfoProps> = ({ index, userStatus, userImage, userN
       <div className="flex items-center justify-center gap-2">
         <span>{index+1}</span>
         {userStatus == "up" ?
-          <IoMdArrowDropleft /> : <IoMdArrowDropright />
+          <Image src={ico_up} alt=""/> : <Image src={ico_down} alt="" />
         }
         <Image src={userImage} alt="" width={42} height={42} />
         <div className="flex flex-col items-left">
@@ -106,7 +106,7 @@ const UserRank = () => {
     <div className="flex items-center justify-between w-full p-2 px-5 bg-button rounded-xl">
       <div className="flex items-center justify-center gap-2">
         <span>{"203"}</span>
-         <IoMdArrowDropright />
+        <Image src={ico_down} alt="" />
         <Image src={user_avatar} alt="" width={42} height={42} />
         <div className="flex flex-col items-center">
           <span className=" font-semibold text-[14px]">
