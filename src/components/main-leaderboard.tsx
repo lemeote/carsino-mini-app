@@ -108,7 +108,7 @@ const UserRank = () => {
         <span>{"203"}</span>
         <Image src={ico_down} alt="" />
         <Image src={user_avatar} alt="" width={42} height={42} />
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-start">
           <span className=" font-semibold text-[14px]">
             {'me'}
           </span>
