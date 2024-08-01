@@ -10,7 +10,7 @@ const Header = () => {
     <div className="flex justify-between w-full">
       <div className="flex items-center justify-center gap-2">
         <Icons.mainIcon.games_icon />
-        <span>Games</span>
+        <span>All Games</span>
       </div>
       <div className="flex gap-6">
         <span className="flex items-center justify-center rounded-sm p-2 px-3 bg-button font-medium text-[14px]">See All</span>
@@ -27,16 +27,17 @@ const Header = () => {
   );
 };
 
-const MainGames = () => {
+const GamesList = () => {
   return (
     <div className="flex flex-col w-full gap-6">
       <Header />
-      <main className="flex justify-between">
-        <Image src={keno_card} alt="" width={150} height={238} />
-        <Image src={dice_card} alt="" width={150} height={238} />
+      <main className="flex flex-wrap justify-center w-full gap-2 ">
+        <Image src={keno_card} alt="" width={150}/>
+        <Image src={dice_card} alt="" width={150}/>
+        <Image src={dice_card} alt="" width={150}/>
       </main>
     </div>
   );
 };
 
-export default MainGames;
+export default GamesList;

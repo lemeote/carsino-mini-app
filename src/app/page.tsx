@@ -19,7 +19,7 @@ export default function Home() {
         <Header imageSrc={logo} />
         <main className="flex flex-col items-center gap-10 mt-10">
           {/* <MainCarousel /> */}
-          <div className="w-full">
+          <div className="m-auto">
             <Image src={main} alt="" width={400} height={300} />
           </div>
           <MainGames />
