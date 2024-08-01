@@ -3,7 +3,8 @@
 import Image from "next/image"
 
 import Header from "@/components/Header"
-import { user_avatar, ico_solana } from "../../../assets"
+import { user_avatar } from "../../../assets"
+import ItemList from "@/components/profile-itemlist"
 
 const userinfo = {
   userName: "John Doe",
@@ -26,23 +27,6 @@ const useritem = [
 
 ]
 
-interface Props {
-  title: string,
-  param: string
-}
-
-const UserItem: React.FC<Props> = ({ title, param }) => {
-  return (
-    <div className="flex items-center justify-between w-full p-2 px-5 bg-button rounded-xl text-[14px]">
-      <div className="flex gap-1">
-        <Image src={ico_solana} alt="" className={`${title === 'Connect Wallet' ? 'block' : 'hidden'}`} />
-        <span>{title}</span>
-      </div>
-      <span className={`${param === 'Connect' ? 'bg-[#7819F3] px-3 py-[6px] rounded-xl' : ''}`}>{param}</span>
-    </div>
-  )
-}
-
 const UserInfo = () => {
   return (
     <div className="flex flex-col justify-between h-full mt-6">
@@ -63,7 +47,7 @@ const UserInfo = () => {
         <div className="flex flex-col gap-4 mt-6">
           {
             useritem.map((item, index) => (
-              <UserItem title={item.title} param={item.param} key={index} />
+              <ItemList title={item.title} param={item.param} key={index} />
             ))
           }
         </div>
