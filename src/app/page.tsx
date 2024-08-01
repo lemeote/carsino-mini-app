@@ -1,41 +1,33 @@
-'use client';
+'use client'
 
-import { Section, Cell, Image, List } from '@telegram-apps/telegram-ui';
 
-import { Link } from '@/components/Link/Link';
+import Image from "next/image";
 
-import tonSvg from './_assets/ton.svg';
+import Header from "@/components/Header";
+import MainGames from "@/components/main-games";
+import MainCarousel from "@/components/Carousel";
+import { logo, main } from "../../assets";
+import MainEarnGems from "@/components/main-earn-gems";
+import MainLeaderBoard from "@/components/main-leaderboard";
+import { Navbar } from "@/components/Navbar";
 
 export default function Home() {
+
   return (
-    <List>
-      <Section
-        header='Features'
-        footer='You can use these pages to learn more about features, provided by Telegram Mini Apps and other useful projects'
-      >
-        <Link href='/ton-connect'>
-          <Cell
-            before={<Image src={tonSvg.src} style={{ backgroundColor: '#007AFF' }}/>}
-            subtitle='Connect your TON wallet'
-          >
-            TON Connect
-          </Cell>
-        </Link>
-      </Section>
-      <Section
-        header='Application Launch Data'
-        footer='These pages help developer to learn more about current launch information'
-      >
-        <Link href='/init-data'>
-          <Cell subtitle='User data, chat information, technical data'>Init Data</Cell>
-        </Link>
-        <Link href='/launch-params'>
-          <Cell subtitle='Platform identifier, Mini Apps version, etc.'>Launch Parameters</Cell>
-        </Link>
-        <Link href='/theme-params'>
-          <Cell subtitle='Telegram application palette information'>Theme Parameters</Cell>
-        </Link>
-      </Section>
-    </List>
+    <>
+      <div className="w-full h-full p-6 bg-basic">
+        <Header imageSrc={logo} />
+        <main className="flex flex-col items-center gap-10 mt-10">
+          {/* <MainCarousel /> */}
+          <div className="w-full">
+            <Image src={main} alt="" width={400} height={300} />
+          </div>
+          <MainGames />
+          <MainEarnGems />
+          <MainLeaderBoard />
+        </main>
+      </div>
+      <Navbar />
+    </>
   );
 }
