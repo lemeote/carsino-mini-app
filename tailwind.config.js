@@ -77,9 +77,6 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-      fontFamily: {
-        default: "Exo 2",
-      },
     },
   },
   plugins: [require("tailwindcss-animate"), require("tw-elements/plugin.cjs")],

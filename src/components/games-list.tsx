@@ -29,9 +29,9 @@ const Header = () => {
 
 const GamesList = () => {
   return (
-    <div className="flex flex-col w-full gap-6">
+    <div className="w-full">
       <Header />
-      <main className="flex flex-wrap w-full gap-2 justify-items-center">
+      <main className="flex flex-wrap w-full justify-evenly gap-14 mt-6">
         <Image src={keno_card} alt="" width={150}/>
         <Image src={dice_card} alt="" width={150}/>
         <Image src={plinko_card} alt="" width={150}/>

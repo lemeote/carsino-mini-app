@@ -16,7 +16,7 @@ const NotiItem: React.FC<NotiItemProps> = ({ notiIcon, title, content, unread, a
           <Image src={notiIcon} alt="" width={16} height={16} />
         </div>
       </div>
-      <div className="text-left">
+      <div className="text-left w-[80%]">
         <div className="flex justify-between w-full">
           <h1>{title}</h1>
           <div className="flex justify-center items-center gap-1">
