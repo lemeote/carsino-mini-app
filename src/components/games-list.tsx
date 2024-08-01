@@ -31,7 +31,7 @@ const GamesList = () => {
   return (
     <div className="flex flex-col w-full gap-6">
       <Header />
-      <main className="flex flex-wrap justify-between w-full gap-2 ">
+      <main className="flex flex-wrap w-full gap-2 justify-items-center">
         <Image src={keno_card} alt="" width={150}/>
         <Image src={dice_card} alt="" width={150}/>
         <Image src={plinko_card} alt="" width={150}/>
