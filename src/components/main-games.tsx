@@ -31,7 +31,7 @@ const MainGames = () => {
   return (
     <div className="flex flex-col w-full gap-6">
       <Header />
-      <main className="flex justify-between">
+      <main className="flex justify-evenly">
         <Image src={keno_card} alt="" width={150} height={238} />
         <Image src={dice_card} alt="" width={150} height={238} />
       </main>
