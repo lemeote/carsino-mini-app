@@ -14,6 +14,8 @@ import noti_ico from "../assets/noti_ico.svg";
 import user_avatar from "../assets/user_avatar.svg";
 import gems_icon from "../assets/gems_icon.svg"
 import gems from "../assets/gems.png";
+import ico_up from "../assets/ico_up.png";
+import ico_down from "../assets/ico_down.png";
 import plinko_card from "../assets/plinko.png"
 
 export {
@@ -33,5 +35,7 @@ export {
   user_avatar,
   gems_icon,
   gems,
+  ico_up,
+  ico_down,
   plinko_card,
 }
