@@ -42,9 +42,9 @@ const UserInfo = () => {
 
 const UserProfile = () => {
   return (
-    <div className="w-full h-screen p-6 pb-0 overflow-auto text-white bg-bgcolor">
+    <div className="w-full h-screen pt-6 pb-0 overflow-auto text-white bg-bgcolor">
       <Header imageSrc={user_avatar} />
-      <main className="h-[75%] mt-12">
+      <main className="h-[75%] px-6 mt-12">
         <h1>My Profile</h1>
         <UserInfo />
       </main>
