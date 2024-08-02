@@ -29,7 +29,7 @@ const LiveChatHeader = () => {
         </div>
         <span className="text-lg font-bold">Online chat</span>
       </div>
-      <span className="bg-button text-basic border border-[#7819F3] rounded-xl px-3 py-1 cursor-default">356</span>
+      <span className="bg-inherit text-[#7819F3] border border-[#7819F3] rounded-xl px-3 py-1 cursor-default">356</span>
     </div>
   )
 }

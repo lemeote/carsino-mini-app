@@ -74,8 +74,6 @@ export const Navbar = () => {
   return (
     <div className="fixed bottom-0 w-full h-[100px] flex justify-between px-2 gap-2 z-10 bg-button rounded-t-[32px]">
       {route.map((item, index) => {
-
-
         return (
           <div
             key={index}

@@ -8,7 +8,7 @@ import { Navbar } from "@/components/Navbar";
 const Game = () => {
   return (
     <>
-      <div className="w-full h-screen px-6 pb-40 text-white bg-basic overflow-auto">
+      <div className="w-full h-full min-h-screen p-6 pb-40 text-white bg-basic">
         <Header imageSrc={logo} />
         <main className="mt-10">
           <GamesList />

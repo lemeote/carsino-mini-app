@@ -1,55 +1,11 @@
 import React from "react";
+import { useRouter } from "next/navigation";
 import Image, { StaticImageData } from "next/image";
 
 import { Progress } from "@radix-ui/react-progress";
 import { Icons } from "./Icons"
-import { ico_up, ico_down, user_avatar } from "../../assets";
-
-const userList = [
-  {
-    userStatus: "up",
-    userImage: user_avatar,
-    userName: "Ana Wenderson",
-    userId: "@wenderson",
-    amount: 3450
-  },
-  {
-    userStatus: "up",
-    userImage: user_avatar,
-    userName: "Thomas Duw",
-    userId: "@duet",
-    amount: 3350
-  },
-  {
-    userStatus: "down",
-    userImage: user_avatar,
-    userName: "Nana Nenson",
-    userId: "@nensoon",
-    amount: 2132
-  },
-  {
-    userStatus: "down",
-    userImage: user_avatar,
-    userName: "Ana Wenderson",
-    userId: "@wenderson",
-    amount: 3450
-  },
-  {
-    userStatus: "up",
-    userImage: user_avatar,
-    userName: "Trevor Collin",
-    userId: "@wenderson",
-    amount: 3450
-  },
-  {
-    userStatus: "up",
-    userImage: user_avatar,
-    userName: "Alison Williams",
-    userId: "@wenderson",
-    amount: 3450
-  },
-
-]
+import { ico_down, ico_up, user_avatar } from "../../assets";
+import { leaerboardUserList } from "@/app/temp";
 
 interface UserInfoProps {
   index: number
@@ -60,14 +16,20 @@ interface UserInfoProps {
   amount: number,
 }
 
+
 const Header = () => {
+  const router = useRouter();
+  const gotoleaderboard = () => {
+    router.push("/leaderboard");
+  }
+  
   return (
     <div className="flex justify-between w-full">
       <div className="flex items-center justify-center gap-2">
         <Icons.mainIcon.leaderboard />
         <span>Learderboard</span>
       </div>
-      <div className="flex items-center justify-center p-2 px-3 rounded-sm bg-button">
+      <div className="flex items-center justify-center p-2 px-3 rounded-sm bg-button cursor-pointer" onClick={gotoleaderboard}>
         <span className="font-medium text-sm">View leaderboard</span>
       </div>
     </div>
@@ -161,7 +123,7 @@ const MainLeaderBoard = () => {
       <Header />
       <main className="flex flex-col gap-4">
         <UserRank />
-        {userList.map((item, index) => (
+        {leaerboardUserList.map((item, index) => (
           <div key={index}>
             <RankItem index={index} userImage={item.userImage} userStatus={item.userStatus} userId={item.userId} userName={item.userName} amount={item.amount} />
           </div>
