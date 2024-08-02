@@ -4,14 +4,10 @@ import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
-  DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+
 
 import { ico_solana } from "../../assets"
 
@@ -22,7 +18,7 @@ interface Props {
 
 const ItemList: React.FC<Props> = ({ title, param }) => {
   return (
-    <div className="flex items-center justify-between w-full p-2 px-5 bg-button rounded-xl text-[14px]">
+    <div className="flex items-center justify-between w-full p-2 px-5 bg-button rounded-xl text-sm">
       <div className="flex gap-1">
         <Image src={ico_solana} alt="" className={`${title === 'Connect Wallet' ? 'block' : 'hidden'}`} />
         <span>{title}</span>
