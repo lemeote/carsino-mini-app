@@ -27,12 +27,18 @@ const Header: React.FC<ImageProps> = ({ imageSrc }) => {
     router.push('/');
   }
 
+  const gotomainpage = () => {
+    router.push("/");
+  }
+
   return (
     <div className="flex items-center justify-between w-full bg-inherit sticky top-0 pt-6 pb-2 overflow-auto z-50">
       {
         imageSrc === logo ?
+        <div className="cursor-pointer" onClick={gotomainpage}>
           <Image src={imageSrc} alt="" width={96} height={38} />
-          : <div className="flex items-center justify-center w-12 h-12 bg-button rounded-xl" onClick={backButton}>
+        </div>
+          : <div className="flex items-center justify-center w-12 h-12 bg-button rounded-xl cursor-pointer" onClick={backButton}>
             <FaArrowLeft size={24} />
           </div>
       }
@@ -43,7 +49,7 @@ const Header: React.FC<ImageProps> = ({ imageSrc }) => {
           <span>0,567889</span>
         </div>
         { pathName !== '/notification' ?
-        <div className="flex items-center justify-center w-12 h-12 border bg-button rounded-xl border-border-color" onClick={notification}>
+        <div className="flex items-center justify-center w-12 h-12 border bg-button rounded-xl border-border-color cursor-pointer" onClick={notification}>
             <Icons.headerButton.noti_button color="#584D74"/>
         </div>
         :
@@ -52,7 +58,7 @@ const Header: React.FC<ImageProps> = ({ imageSrc }) => {
           </div>
         }
         { pathName !== '/user-info' ?
-        <div className="flex items-center justify-center w-12 h-12 border bg-button rounded-xl border-border-color" onClick={userProfile}>
+        <div className="flex items-center justify-center w-12 h-12 border bg-button rounded-xl border-border-color cursor-pointer" onClick={userProfile}>
             <Icons.headerButton.user_avatar color="#584D74" />
         </div>
         :

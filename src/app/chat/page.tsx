@@ -29,7 +29,7 @@ const LiveChatHeader = () => {
         </div>
         <span className="text-lg font-bold">Online chat</span>
       </div>
-      <span className="bg-button text-basic border border-[#7819F3] rounded-xl px-3 py-1">356</span>
+      <span className="bg-inherit text-[#7819F3] border border-[#7819F3] rounded-xl px-3 py-1 cursor-default">356</span>
     </div>
   )
 }
@@ -60,13 +60,13 @@ const LiveChatInput = () => {
   return (
     <div className="flex flex-col gap-3 justify-between w-full bg-basic border border-[#271B42] rounded-3xl p-3">
       <div className="w-full">
-        <Textarea placeholder="Type your message here." className="w-full bg-inherit border border-border-color min-h-10"/>
+        <Textarea placeholder="Type your message here." className="w-full bg-inherit border border-border-color min-h-10 cursor-text"/>
       </div>
       <div className="flex justify-end gap-2">
-        <div className="p-3 border border-border-color rounded-lg">
+        <div className="p-3 border border-border-color rounded-lg cursor-pointer">
           <Image src={ico_emoji} alt="" />
         </div>
-        <div className="p-3 bg-[#7819F3] rounded-xl">
+        <div className="p-3 bg-[#7819F3] rounded-xl cursor-pointer">
           <Image src={ico_send} alt="" />
         </div>
       </div>

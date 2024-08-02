@@ -25,10 +25,10 @@ const Carousel: React.FC<Props> = ({ images }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative flex items-center justify-center">
+      <div className="relative w-full flex items-center justify-center">
         {images.map((image, index) => (
-          <div key={index} className={`absolute w-[300px] transition-opacity duration-1000 ${slideIndex === index ? 'opacity-100' : 'opacity-0'}`}>
-            <Image src={image} alt='' layout="responsive" width={300} objectFit="cover" />
+          <div key={index} className={`absolute w-[calc(100vw-48px)] transition-opacity duration-1000 ${slideIndex === index ? 'opacity-100' : 'opacity-0'}`}>
+            <img src={image.src} alt='' className='object-cover w-full h-full' />
           </div>
         ))}
       </div>
