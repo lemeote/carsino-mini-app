@@ -5,27 +5,8 @@ import Image from "next/image"
 import Header from "@/components/Header"
 import { user_avatar } from "../../../assets"
 import ItemList from "@/components/profile-itemlist"
+import { userinfo, useritem } from "../temp"
 
-const userinfo = {
-  userName: "John Doe",
-  userID: "jhon_123"
-}
-
-const useritem = [
-  {
-    title: 'Name',
-    param: userinfo.userName,
-  },
-  {
-    title: 'Telegram username',
-    param: userinfo.userID,
-  },
-  {
-    title: 'Connect Wallet',
-    param: "Connect",
-  },
-
-]
 
 const UserInfo = () => {
   return (

@@ -24,7 +24,7 @@ const NotiItem: React.FC<NotiItemProps> = ({ notiIcon, title, content, unread, a
             <span className="text-xs text-[#b9b9b933]">{alerttime}</span>
           </div>
         </div>
-        <span className="text-[14px] text-[#b9b9b933]">
+        <span className="text-sm text-[#b9b9b933]">
           {content}
         </span>
       </div>
