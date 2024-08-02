@@ -13,7 +13,7 @@ const Header = () => {
         <span>All Games</span>
       </div>
       <div className="flex gap-6">
-        <span className="flex items-center justify-center rounded-sm p-2 px-3 bg-button font-medium text-[14px]">See All</span>
+        <span className="flex items-center justify-center rounded-sm p-2 px-3 bg-button font-medium text-sm">See All</span>
         <div className="flex items-center justify-center gap-3">
           <div className="p-2 rounded-sm bg-button">
             <IoMdArrowDropleft size={18} />

@@ -68,7 +68,7 @@ const Header = () => {
         <span>Learderboard</span>
       </div>
       <div className="flex items-center justify-center p-2 px-3 rounded-sm bg-button">
-        <span className="font-medium text-[14px]">View leaderboard</span>
+        <span className="font-medium text-sm">View leaderboard</span>
       </div>
     </div>
   );
@@ -84,7 +84,7 @@ const RankItem: React.FC<UserInfoProps> = ({ index, userStatus, userImage, userN
         }
         <Image src={userImage} alt="" width={42} height={42} />
         <div className="flex flex-col items-left">
-          <span className=" font-semibold text-[14px]">
+          <span className=" font-semibold text-sm">
             {userName}
           </span>
           <span className="text-xs font-medium">
@@ -110,7 +110,7 @@ const UserRank = () => {
         <Image src={ico_down} alt="" />
         <Image src={user_avatar} alt="" width={42} height={42} />
         <div className="flex flex-col items-start">
-          <span className=" font-semibold text-[14px]">
+          <span className=" font-semibold text-sm">
             {'me'}
           </span>
           <span className="text-xs font-medium text-left ">
