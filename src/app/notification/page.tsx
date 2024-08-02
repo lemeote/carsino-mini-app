@@ -26,7 +26,7 @@ const NotificationPage = () => {
       <div className="w-full p-6 bg-bgcolor text-white">
           <Header imageSrc={ico_chart} />
           <BodyHeader />
-        <main>
+        <main className="pt-6">
           {
             notiList.map((item, index) => (
               <div key={index}>
