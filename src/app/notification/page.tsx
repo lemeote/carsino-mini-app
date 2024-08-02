@@ -75,11 +75,9 @@ const BodyHeader = () => {
 const NotificationPage = () => {
   return (
     <>
-      <div className="w-full bg-bgcolor text-white">
-        <div className="p-6">
+      <div className="w-full p-6 bg-bgcolor text-white">
           <Header imageSrc={ico_chart} />
           <BodyHeader />
-        </div>
         <main>
           {
             notiList.map((item, index) => (

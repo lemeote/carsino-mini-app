@@ -28,7 +28,7 @@ const Header: React.FC<ImageProps> = ({ imageSrc }) => {
   }
 
   return (
-    <div className="flex items-center justify-between w-full">
+    <div className="flex items-center justify-between w-full bg-inherit sticky top-0 pt-6 pb-2 overflow-auto z-50">
       {
         imageSrc === logo ?
           <Image src={imageSrc} alt="" width={96} height={38} />
