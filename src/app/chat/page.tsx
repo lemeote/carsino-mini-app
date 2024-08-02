@@ -7,8 +7,9 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/components/ui/avatar"
+import { Textarea } from "@/components/ui/textarea"
 import Header from "@/components/Header";
-import { logo, ico_chat } from "../../../assets";
+import { logo, ico_chat, ico_send, ico_emoji } from "../../../assets";
 import { chatListData } from "../temp";
 import { Navbar } from "@/components/Navbar";
 
@@ -55,6 +56,24 @@ const ChatItem: React.FC<Props> = ({ userImage, userID, sendedTime, content }) =
   )
 }
 
+const LiveChatInput = () => {
+  return (
+    <div className="flex flex-col gap-3 justify-between w-full bg-basic border border-[#271B42] rounded-3xl p-3">
+      <div className="w-full">
+        <Textarea placeholder="Type your message here." className="w-full bg-inherit border border-border-color min-h-10"/>
+      </div>
+      <div className="flex justify-end gap-2">
+        <div className="p-3 border border-border-color rounded-lg">
+          <Image src={ico_emoji} alt="" />
+        </div>
+        <div className="p-3 bg-[#7819F3] rounded-xl">
+          <Image src={ico_send} alt="" />
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const LiveChat = () => {
   return (
     <>
@@ -63,7 +82,7 @@ const LiveChat = () => {
           <Header imageSrc={logo} />
           <LiveChatHeader />
         </header>
-        <main className="flex flex-col gap-4 mt-6">
+        <main className="flex flex-col gap-4 mt-6 pb-28">
           {
             chatListData.map((item, index) => (
               <div key={index} >
@@ -73,6 +92,9 @@ const LiveChat = () => {
           }
         </main>
       </div>
+        <div className="fixed w-full p-6 bottom-20">
+          <LiveChatInput />
+        </div>
       <Navbar />
     </>
   );

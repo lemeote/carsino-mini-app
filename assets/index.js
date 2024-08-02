@@ -28,6 +28,8 @@ import ico_warining from "../assets/ico_warning.png"
 import ico_bell from "../assets/ico_bell.png"
 import ico_solana from "../assets/ico_solana.png"
 import ico_chat from "../assets/ico_chat.png"
+import ico_emoji from "../assets/ico_emoji.svg"
+import ico_send from "../assets/ico_send.svg"
 
 export {
   diamond_icon,
@@ -59,5 +61,7 @@ export {
   ico_bell,
   ico_solana,
   ico_chat,
+  ico_emoji,
+  ico_send,
   user1,
 }
