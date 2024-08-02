@@ -77,12 +77,12 @@ const LiveChatInput = () => {
 const LiveChat = () => {
   return (
     <>
-      <div className="w-full h-full min-h-screen pt-6 pt-0 text-white bg-bgcolor pb-40">
+      <div className="w-full h-full min-h-screen p-6 pt-0 text-white bg-bgcolor pb-40">
         <header className="sticky top-0 pt-6 pb-2 z-50 bg-bgcolor">
           <Header imageSrc={logo} />
           <LiveChatHeader />
         </header>
-        <main className="flex flex-col px-6 gap-4 mt-6 pb-28">
+        <main className="flex flex-col gap-4 mt-6 pb-28">
           {
             chatListData.map((item, index) => (
               <div key={index} >
