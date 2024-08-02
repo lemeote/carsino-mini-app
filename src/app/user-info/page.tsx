@@ -10,7 +10,7 @@ import { userinfo, useritem } from "../temp"
 
 const UserInfo = () => {
   return (
-    <div className="flex flex-col justify-between h-full min-h-[calc(100vw-30vw)] mt-6">
+    <div className="flex flex-col justify-between h-full min-h-screen mt-6">
       <div>
         <div className="flex justify-evenly">
           <div className="flex items-center justify-center border w-44 h-44 rounded-xl border-border-color">
