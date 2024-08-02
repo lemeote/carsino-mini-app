@@ -15,7 +15,7 @@ export default function Home() {
       <div className="w-full h-full p-6 text-white bg-bgcolor">
         <Header imageSrc={logo} />
         <main className="flex flex-col items-center gap-10 mt-10">
-          <Carousel images={[main, gems, main, gems]}/>
+          <Carousel images={[main, gems, main]}/>
           <MainGames />
           <MainEarnGems />
           <MainLeaderBoard />

@@ -1,8 +1,9 @@
+import React from "react";
 import Image, { StaticImageData } from "next/image";
-import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
+
+import { Progress } from "@radix-ui/react-progress";
 import { Icons } from "./Icons"
 import { ico_up, ico_down, user_avatar } from "../../assets";
-import React from "react";
 
 const userList = [
   {
@@ -77,9 +78,9 @@ const RankItem: React.FC<UserInfoProps> = ({ index, userStatus, userImage, userN
   return (
     <div className="flex items-center justify-between w-full p-5 border border-border-color rounded-xl">
       <div className="flex items-center justify-center gap-2">
-        <span>{index+1}</span>
+        <span>{index + 1}</span>
         {userStatus == "up" ?
-          <Image src={ico_up} alt=""/> : <Image src={ico_down} alt="" />
+          <Image src={ico_up} alt="" /> : <Image src={ico_down} alt="" />
         }
         <Image src={userImage} alt="" width={42} height={42} />
         <div className="flex flex-col items-left">
@@ -127,19 +128,29 @@ const UserRank = () => {
   );
 }
 
+
+const ProgressDemo = () => {
+  const [progress, setProgress] = React.useState(0)
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => setProgress(66), 500)
+    return () => clearTimeout(timer)
+  }, [])
+
+  return <Progress value={progress} className="w-[100px] h-[6px] rounded-full bg-button" />
+}
+
 const LoadMore = () => {
   return (
     <div className="flex justify-between w-full">
-        <div className="flex items-center justify-center gap-3">
-          <span className="text-xs ">{`15/37`}</span>
-          <div className="h-[6px] w-[110px] bg-button relative rounded-full ">
-            <div className="bg-[#7819F3] w-[36%] absolute h-[6px] rounded-full"></div>
-          </div>
-          <div className="text-xs">36%</div>
-        </div>
-        <div className="flex items-center justify-center px-5 py-2 border rounded-[12px] bg-button border-border-color">
-            <span>Load more</span>
-        </div>
+      <div className="flex items-center justify-center gap-3">
+        <span className="text-xs ">{`15/37`}</span>
+        <ProgressDemo />
+        <div className="text-xs">36%</div>
+      </div>
+      <div className="flex items-center justify-center px-5 py-2 border rounded-[12px] bg-button border-border-color">
+        <span>Load more</span>
+      </div>
     </div>
   )
 }
@@ -149,9 +160,9 @@ const MainLeaderBoard = () => {
     <div className="flex flex-col w-full gap-6 pb-24">
       <Header />
       <main className="flex flex-col gap-4">
-          <UserRank />
-          {userList.map((item, index) => (
-            <div key={index}>
+        <UserRank />
+        {userList.map((item, index) => (
+          <div key={index}>
             <RankItem index={index} userImage={item.userImage} userStatus={item.userStatus} userId={item.userId} userName={item.userName} amount={item.amount} />
           </div>
         ))}

@@ -3,7 +3,8 @@ import { IoMdArrowDropleft } from "react-icons/io";
 import { IoMdArrowDropright } from "react-icons/io";
 
 import { Icons } from "./Icons"
-import { gems } from "../../assets";
+import { gems, main } from "../../assets";
+import Carousel from "./Carousel";
 
 const Header = () => {
   return (
@@ -32,9 +33,8 @@ const MainEarnGems = () => {
     <div className="flex flex-col w-full gap-6">
       <Header />
       <main className="m-auto">
-        {/* Curousel for gems */}
         <div className="w-auto h-auto">
-        <Image src={gems} alt=""/>
+        <Carousel images={[gems, main, gems]}/>
         </div>
       </main>
     </div>

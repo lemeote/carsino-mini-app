@@ -21,7 +21,7 @@ const Carousel: React.FC<Props> = ({ images }) => {
 
   return (
     <div
-      className="mx-auto"
+      className="mx-auto mt-20"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -32,9 +32,9 @@ const Carousel: React.FC<Props> = ({ images }) => {
           </div>
         ))}
       </div>
-      <div className="mt-4 text-center">
+      <div className="mt-24 text-center">
         {images.map((_, index) => (
-          <span key={index} className={`dot ${slideIndex === index ? 'bg-gray-700' : 'bg-gray-400'} mx-1 rounded-full inline-block h-3 w-3`}></span>
+          <span key={index} className={`dot ${slideIndex === index ? 'bg-gray-700' : 'bg-gray-400'} mx-1 rounded-full inline-block h-2 w-2`}></span>
         ))}
       </div>
     </div>
