@@ -10,7 +10,7 @@ import { notiList } from "../temp"
 
 const BodyHeader = () => {
   return (
-    <div className="flex justify-between w-full mt-6">
+    <div className="flex justify-between w-full mt-6 px-6">
       <div className="flex items-center justify-center gap-2">
         <Image src={ico_bell} alt=""/>
         <h2>Notifications</h2>
