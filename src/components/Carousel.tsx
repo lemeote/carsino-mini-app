@@ -7,37 +7,31 @@ interface Props {
 
 const Carousel: React.FC<Props> = ({ images }) => {
   const [slideIndex, setSlideIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
   const length = images.length;
 
   useEffect(() => {
-    if (!isHovered) {
       const interval = setInterval(() => {
         setSlideIndex((prevIndex) => (prevIndex + 1) % length);
       }, 3000);
       return () => clearInterval(interval);
-    }
-  }, [isHovered, length]);
+  }, [length]);
 
   return (
-    <div
-      className="mx-auto mt-24"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="relative w-full flex items-center justify-center">
+    <>
+      <div className="relative w-full"
+      >
         {images.map((image, index) => (
-          <div key={index} className={`absolute w-[calc(100vw-48px)] transition-opacity duration-1000 ${slideIndex === index ? 'opacity-100' : 'opacity-0'}`}>
-            <img src={image.src} alt='' className='object-cover w-full h-full' />
+          <div key={index} className={`absolute w-[calc(100vw-48px)] h-[50vw] transition-opacity duration-1000 ${slideIndex === index ? 'opacity-100' : 'opacity-0'}`}>
+            <Image src={image} alt='' fill />
           </div>
         ))}
       </div>
-      <div className="mt-28 text-center">
+      <div className="mt-[55vw] text-center">
         {images.map((_, index) => (
           <span key={index} className={`dot ${slideIndex === index ? 'bg-gray-700' : 'bg-gray-400'} mx-1 rounded-full inline-block h-2 w-2`}></span>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

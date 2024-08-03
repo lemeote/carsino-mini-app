@@ -15,7 +15,7 @@ const BodyHeader = () => {
         <Image src={ico_bell} alt=""/>
         <h2>Notifications</h2>
       </div>
-        <span className="font-normal text-xs">Mark all as read</span>
+        <span className="text-xs font-normal">Mark all as read</span>
     </div>
   );
 };
@@ -23,10 +23,10 @@ const BodyHeader = () => {
 const NotificationPage = () => {
   return (
     <>
-      <div className="w-full p-6 bg-bgcolor text-white">
+      <div className="w-full min-h-screen text-white bg-bgcolor">
           <Header imageSrc={ico_chart} />
           <BodyHeader />
-        <main className="pt-6">
+        <main className="px-6 pt-6">
           {
             notiList.map((item, index) => (
               <div key={index}>

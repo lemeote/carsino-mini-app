@@ -10,7 +10,7 @@ import { userinfo, useritem } from "../temp"
 
 const UserInfo = () => {
   return (
-    <div className="flex flex-col justify-between h-full min-h-screen mt-6">
+    <div className="flex flex-col justify-between h-full gap-24 mt-6">
       <div>
         <div className="flex justify-evenly">
           <div className="flex items-center justify-center border w-44 h-44 rounded-xl border-border-color">
@@ -42,9 +42,9 @@ const UserInfo = () => {
 
 const UserProfile = () => {
   return (
-    <div className="w-full h-screen p-6 pb-0 overflow-auto text-white bg-bgcolor">
+    <div className="w-full h-full min-h-screen pb-0 overflow-auto text-white bg-bgcolor">
       <Header imageSrc={user_avatar} />
-      <main className="h-[75%] mt-12">
+      <main className="h-[75%] mt-12 px-6">
         <h1>My Profile</h1>
         <UserInfo />
       </main>

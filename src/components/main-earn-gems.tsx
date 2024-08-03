@@ -14,7 +14,7 @@ const Header = () => {
         <span>Earn Gems</span>
       </div>
       <div className="flex gap-6">
-        <span className="flex items-center justify-center rounded-sm p-2 px-3 bg-button font-medium text-sm">See All</span>
+        <span className="flex items-center justify-center p-2 px-3 text-sm font-medium rounded-sm bg-button">See All</span>
         <div className="flex items-center justify-center gap-3">
           <div className="p-2 rounded-sm bg-button">
             <IoMdArrowDropleft size={18} />
@@ -30,14 +30,12 @@ const Header = () => {
 
 const MainEarnGems = () => {
   return (
-    <div className="flex flex-col w-full gap-6">
+    <>
       <Header />
-      <main className="m-auto">
-        <div className="w-auto h-auto">
-        <Carousel images={[gems, main, gems]}/>
-        </div>
-      </main>
-    </div>
+      <div className="w-full">
+        <Carousel images={[gems, main, gems]} />
+      </div>
+    </>
   );
 }
 

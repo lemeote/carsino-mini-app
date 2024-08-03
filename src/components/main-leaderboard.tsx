@@ -29,8 +29,8 @@ const Header = () => {
         <Icons.mainIcon.leaderboard />
         <span>Learderboard</span>
       </div>
-      <div className="flex items-center justify-center p-2 px-3 rounded-sm bg-button cursor-pointer" onClick={gotoleaderboard}>
-        <span className="font-medium text-sm">View leaderboard</span>
+      <div className="flex items-center justify-center p-2 px-3 rounded-sm cursor-pointer bg-button" onClick={gotoleaderboard}>
+        <span className="text-sm font-medium">View leaderboard</span>
       </div>
     </div>
   );
@@ -46,7 +46,7 @@ const RankItem: React.FC<UserInfoProps> = ({ index, userStatus, userImage, userN
         }
         <Image src={userImage} alt="" width={42} height={42} />
         <div className="flex flex-col items-left">
-          <span className=" font-semibold text-sm">
+          <span className="text-sm font-semibold ">
             {userName}
           </span>
           <span className="text-xs font-medium">
@@ -72,7 +72,7 @@ const UserRank = () => {
         <Image src={ico_down} alt="" />
         <Image src={user_avatar} alt="" width={42} height={42} />
         <div className="flex flex-col items-start">
-          <span className=" font-semibold text-sm">
+          <span className="text-sm font-semibold ">
             {'me'}
           </span>
           <span className="text-xs font-medium text-left ">
@@ -119,7 +119,7 @@ const LoadMore = () => {
 
 const MainLeaderBoard = () => {
   return (
-    <div className="flex flex-col w-full gap-6 pb-24">
+    <div className="flex flex-col w-full gap-6 pb-28">
       <Header />
       <main className="flex flex-col gap-4">
         <UserRank />

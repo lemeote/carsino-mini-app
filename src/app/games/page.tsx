@@ -8,9 +8,9 @@ import { Navbar } from "@/components/Navbar";
 const Game = () => {
   return (
     <>
-      <div className="w-full h-full min-h-screen p-6 pb-40 text-white bg-basic">
+      <div className="w-full h-full min-h-screen pb-40 text-white bg-basic">
         <Header imageSrc={logo} />
-        <main className="mt-10">
+        <main className="px-6 mt-10">
           <GamesList />
         </main>
       </div>
