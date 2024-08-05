@@ -30,7 +30,7 @@ export const TaskItem: React.FC<Props> = ({ icoSrc, title, content, buttonTitle 
         <Image src={icoSrc} alt="" width={57} height={57} />
       </div>
       <div className="flex flex-col gap-2 w-[75%]">
-        <div className="flex flex-wrap justify-between items-center gap-2 w-full">
+        <div className="flex flex-wrap justify-evenly items-center gap-2 w-full">
           <span className="text-base font-medium">{title}</span>
           <Button className="bg-inherit border border-border-color text-xs rounded-sm" onClick={(
   )=>gotoDetailItem(buttonTitle)}>{buttonTitle}</Button>
