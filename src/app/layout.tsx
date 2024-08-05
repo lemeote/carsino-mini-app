@@ -15,13 +15,16 @@ const exo2 = Exo_2({
 });
 
 export const metadata: Metadata = {
-  title: 'Your Application Title Goes Here',
-  description: 'Your application description goes here',
+  title: 'Robert Gamba',
+  description: 'this is TG mini app',
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
+      <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
+      </head>
       <body className={exo2.className}>
       <Root>
         {children}
