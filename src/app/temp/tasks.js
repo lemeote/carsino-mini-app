@@ -56,3 +56,48 @@ export const taskItemList = [
     buttonTitle: "Watch",
   },
 ];
+
+export const taskDailyBonusList = [
+  {
+    icoSrc: ico_dailybonus,
+    title: "Day 1",
+    content: "Daily login to earn 5 gems",
+    buttonTitle: "Claim",
+  },
+  {
+    icoSrc: ico_dailybonus,
+    title: "Day 2",
+    content: "Daily login to earn 10 gems",
+    buttonTitle: "Claim",
+  },
+  {
+    icoSrc: ico_dailybonus,
+    title: "Day 3",
+    content: "Daily login to earn 15 gems",
+    buttonTitle: "Claim",
+  },
+  {
+    icoSrc: ico_dailybonus,
+    title: "Day 4",
+    content: "Daily login to earn 20 gems",
+    buttonTitle: "Claim",
+  },
+  {
+    icoSrc: ico_dailybonus,
+    title: "Day 5",
+    content: "Daily login to earn 25 gems",
+    buttonTitle: "Claim",
+  },
+  {
+    icoSrc: ico_dailybonus,
+    title: "Day 6",
+    content: "Daily login to earn 30 gems",
+    buttonTitle: "Claim",
+  },
+  {
+    icoSrc: ico_dailybonus,
+    title: "Day 7",
+    content: "Daily login to earn 50 gems",
+    buttonTitle: "Claim",
+  },
+];

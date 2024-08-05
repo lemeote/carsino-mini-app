@@ -24,7 +24,7 @@ const Header: React.FC<ImageProps> = ({ imageSrc }) => {
   }
 
   const backButton = () => {
-    router.push('/');
+    router.back();
   }
 
   const gotomainpage = () => {
