@@ -38,6 +38,7 @@ import ico_invitefriends2 from "../assets/ico_invitefriends2.png"
 import ico_monthlychallenge from "../assets/ico_monthlychallenge.png"
 import ico_watchadd from "../assets/ico_watchadd.png"
 import ico_weeklymission from "../assets/ico_weeklymission.png"
+import ico_tasks from "../assets/ico_tasks.svg"
 
 export {
   diamond_icon,
@@ -80,4 +81,5 @@ export {
   ico_monthlychallenge,
   ico_watchadd,
   ico_weeklymission,
+  ico_tasks,
 }
