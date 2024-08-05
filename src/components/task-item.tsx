@@ -19,6 +19,10 @@ export const TaskItem: React.FC<Props> = ({ icoSrc, title, content, buttonTitle 
     {
       router.push('/daily-bonus')
     }
+    if (e === "View task")
+    {
+      router.push('/daily-task')
+    }
   }
   return (
     <div className="flex gap-2 p-4 justify-between items-center bg-inherit border border-border-color rounded-3xl">

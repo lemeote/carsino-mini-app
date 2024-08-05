@@ -101,3 +101,42 @@ export const taskDailyBonusList = [
     buttonTitle: "Claim",
   },
 ];
+
+export const taskDailyTaskList = [
+  {
+    icoSrc: ico_dailytasks,
+    title: "Earn 10 gems",
+    content: "Complete one round of any game available",
+    buttonTitle: "Claim",
+  },
+  {
+    icoSrc: ico_dailytasks,
+    title: "Earn 100 gems",
+    content: "Successfully refer a friend who join",
+    buttonTitle: "Claim",
+  },
+  {
+    icoSrc: ico_dailytasks,
+    title: "Earn 10 gems",
+    content: "Send at least 5 messages in the live chat",
+    buttonTitle: "Claim",
+  },
+  {
+    icoSrc: ico_dailytasks,
+    title: "Earn 5 gems",
+    content: "Check the leaderboard standings",
+    buttonTitle: "Claim",
+  },
+  {
+    icoSrc: ico_dailytasks,
+    title: "Earn 5 gems",
+    content: "Visit the in-game store and browse items",
+    buttonTitle: "Claim",
+  },
+  {
+    icoSrc: ico_dailytasks,
+    title: "Earn 20 gems",
+    content: "Play and complete 2 game rounds in a day",
+    buttonTitle: "Claim",
+  },
+]
