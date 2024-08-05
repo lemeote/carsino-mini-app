@@ -146,3 +146,49 @@ export const taskDailyTaskList = [
     buttonTitle: "Play",
   },
 ]
+
+export const taskWeeklyMissionList = [
+  {
+    icoSrc: ico_weeklymission,
+    title: "Earn 100 gems",
+    content: "Play and complete 10 rounds of any game",
+    buttonTitle: "Claim",
+  },
+  {
+    icoSrc: ico_weeklymission,
+    title: "Earn 300 gems",
+    content: "Successfully refer 3 friends",
+    buttonTitle: "Invite",
+    inviteCount: 1,
+  },
+  {
+    icoSrc: ico_weeklymission,
+    title: "Earn 200 gems",
+    content: "Log in to the bot every day for a full week",
+    buttonTitle: "Claim",
+  },
+  {
+    icoSrc: ico_weeklymission,
+    title: "Earn 50 gems",
+    content: "Send a total of 50 messages in the live chat",
+    buttonTitle: "Chat now",
+  },
+  {
+    icoSrc: ico_weeklymission,
+    title: "Earn 35 gems",
+    content: "Check the leaderboard everyday for a week",
+    buttonTitle: "Go leaderboard",
+  },
+  {
+    icoSrc: ico_weeklymission,
+    title: "Earn 50 gems",
+    content: "Victory in five game rounds during the week",
+    buttonTitle: "Play",
+  },
+  {
+    icoSrc: ico_weeklymission,
+    title: "Earn 75 gems",
+    content: "Visit the in-game store for a week",
+    buttonTitle: "Play",
+  },
+]
