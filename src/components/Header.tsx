@@ -32,7 +32,7 @@ const Header: React.FC<ImageProps> = ({ imageSrc }) => {
   }
 
   return (
-    <div className="sticky top-0 z-50 flex items-center justify-between w-full gap-5 p-6 pb-2 overflow-auto bg-inherit">
+    <div className="sticky top-0 z-50 flex items-center justify-between w-full gap-5 p-6 pb-3 overflow-auto bg-inherit">
       {
         imageSrc === logo ?
         <div className="w-24 cursor-pointer" onClick={gotomainpage}>

@@ -30,6 +30,14 @@ import ico_solana from "../assets/ico_solana.png"
 import ico_chat from "../assets/ico_chat.png"
 import ico_emoji from "../assets/ico_emoji.svg"
 import ico_send from "../assets/ico_send.svg"
+import ico_gems from "../assets/ico_gems.png"
+import ico_dailybonus from "../assets/ico_dailybonus.png"
+import ico_dailytasks from "../assets/ico_dailytasks.png"
+import ico_invitefriends from "../assets/ico_invitefriends.png"
+import ico_invitefriends2 from "../assets/ico_invitefriends2.png"
+import ico_monthlychallenge from "../assets/ico_monthlychallenge.png"
+import ico_watchadd from "../assets/ico_watchadd.png"
+import ico_weeklymission from "../assets/ico_weeklymission.png"
 
 export {
   diamond_icon,
@@ -49,6 +57,7 @@ export {
   gems,
   plinko_card,
   noti_ico,
+  user1,
   ico_up,
   ico_down,
   ico_chart,
@@ -63,5 +72,12 @@ export {
   ico_chat,
   ico_emoji,
   ico_send,
-  user1,
+  ico_gems,
+  ico_dailybonus,
+  ico_dailytasks,
+  ico_invitefriends,
+  ico_invitefriends2,
+  ico_monthlychallenge,
+  ico_watchadd,
+  ico_weeklymission,
 }
