@@ -1,7 +1,7 @@
-import {userinfo, useritem} from "./userprofile"
-import {chatListData} from "./chat"
-import {notiList} from "./notification"
+import { userinfo, useritem } from "./userprofile";
+import { chatListData } from "./chat";
+import { notiList } from "./notification";
 import { leaerboardUserList } from "./main-leaderboard";
+import { taskItemList } from "./tasks";
 
-
-export { userinfo, useritem, chatListData, notiList, leaerboardUserList };
+export { userinfo, useritem, chatListData, notiList, leaerboardUserList, taskItemList };
