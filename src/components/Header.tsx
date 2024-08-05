@@ -32,24 +32,24 @@ const Header: React.FC<ImageProps> = ({ imageSrc }) => {
   }
 
   return (
-    <div className="flex items-center justify-between w-full bg-inherit sticky top-0 pt-6 pb-2 overflow-auto z-50">
+    <div className="sticky top-0 z-50 flex items-center justify-between w-full gap-5 p-6 pb-2 overflow-auto bg-inherit">
       {
         imageSrc === logo ?
-        <div className="cursor-pointer" onClick={gotomainpage}>
+        <div className="w-24 cursor-pointer" onClick={gotomainpage}>
           <Image src={imageSrc} alt="" width={96} height={38} />
         </div>
-          : <div className="flex items-center justify-center w-12 h-12 bg-button rounded-xl cursor-pointer" onClick={backButton}>
+          : <div className="flex items-center justify-center w-12 h-12 cursor-pointer bg-button rounded-xl" onClick={backButton}>
             <FaArrowLeft size={24} />
           </div>
       }
-      <div className="flex gap-3">
+      <div className="flex gap-2 justify-stretch">
         <div className="flex justify-center items-center gap-2 rounded-xl bg-button w-[123px] h-12 border border-border-color
 ">
           <Icons.headerButton.diamond_amount />
           <span>0,567889</span>
         </div>
         { pathName !== '/notification' ?
-        <div className="flex items-center justify-center w-12 h-12 border bg-button rounded-xl border-border-color cursor-pointer" onClick={notification}>
+        <div className="flex items-center justify-center w-12 h-12 border cursor-pointer bg-button rounded-xl border-border-color" onClick={notification}>
             <Icons.headerButton.noti_button color="#584D74"/>
         </div>
         :
@@ -58,7 +58,7 @@ const Header: React.FC<ImageProps> = ({ imageSrc }) => {
           </div>
         }
         { pathName !== '/user-info' ?
-        <div className="flex items-center justify-center w-12 h-12 border bg-button rounded-xl border-border-color cursor-pointer" onClick={userProfile}>
+        <div className="flex items-center justify-center w-12 h-12 border cursor-pointer bg-button rounded-xl border-border-color" onClick={userProfile}>
             <Icons.headerButton.user_avatar color="#584D74" />
         </div>
         :

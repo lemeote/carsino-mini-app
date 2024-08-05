@@ -22,8 +22,8 @@ interface Props {
 
 const LiveChatHeader = () => {
   return (
-    <div className="w-full flex justify-between mt-6">
-      <div className="flex justify-center items-center gap-2">
+    <div className="flex justify-between w-full px-6 mt-6">
+      <div className="flex items-center justify-center gap-2">
         <div className="w-6 h-6">
           <Image src={ico_chat} alt="" width={24} height={24} />
         </div>
@@ -60,10 +60,10 @@ const LiveChatInput = () => {
   return (
     <div className="flex flex-col gap-3 justify-between w-full bg-basic border border-[#271B42] rounded-3xl p-3">
       <div className="w-full">
-        <Textarea placeholder="Type your message here." className="w-full bg-inherit border border-border-color min-h-10 cursor-text"/>
+        <Textarea placeholder="Type your message here." className="w-full border bg-inherit border-border-color min-h-10 cursor-text"/>
       </div>
       <div className="flex justify-end gap-2">
-        <div className="p-3 border border-border-color rounded-lg cursor-pointer">
+        <div className="p-3 border rounded-lg cursor-pointer border-border-color">
           <Image src={ico_emoji} alt="" />
         </div>
         <div className="p-3 bg-[#7819F3] rounded-xl cursor-pointer">
@@ -77,12 +77,12 @@ const LiveChatInput = () => {
 const LiveChat = () => {
   return (
     <>
-      <div className="w-full h-full min-h-screen p-6 pt-0 text-white bg-bgcolor pb-40">
-        <header className="sticky top-0 pt-6 pb-2 z-50 bg-bgcolor">
+      <div className="w-full h-full pb-40 text-white min-h-screenpt-0 bg-bgcolor">
+        <header className="sticky top-0 z-50 pb-2 bg-bgcolor">
           <Header imageSrc={logo} />
           <LiveChatHeader />
         </header>
-        <main className="flex flex-col gap-4 mt-6 pb-28">
+        <main className="flex flex-col gap-4 px-6 mt-6 pb-28">
           {
             chatListData.map((item, index) => (
               <div key={index} >

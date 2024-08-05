@@ -8,14 +8,23 @@ import MainLeaderBoard from "@/components/main-leaderboard";
 import { Navbar } from "@/components/Navbar";
 import { logo, main, gems } from "../../assets";
 
+
+const MainCarousel = () => {
+  return (
+    <div className="w-full">
+      <Carousel images={[main, gems, main]} />
+    </div>
+  )
+}
+
 export default function Home() {
 
   return (
     <>
-      <div className="w-full h-full min-h-screen p-6 text-white bg-bgcolor">
+      <div className="w-full h-full min-h-screen text-white bg-bgcolor">
         <Header imageSrc={logo} />
-        <main className="flex flex-col items-center gap-10 mt-10">
-          <Carousel images={[main, gems, main]}/>
+        <main className="flex flex-col items-center justify-between gap-6 px-6 mt-10">
+          <MainCarousel />
           <MainGames />
           <MainEarnGems />
           <MainLeaderBoard />

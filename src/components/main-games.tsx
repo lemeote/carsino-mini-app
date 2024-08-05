@@ -1,11 +1,18 @@
-import Image from "next/image";
 import { IoMdArrowDropleft } from "react-icons/io";
 import { IoMdArrowDropright } from "react-icons/io";
 
-import { Icons } from "./Icons"
-import { keno_card, dice_card } from "../../assets";
+import { Carousel, CarouselApi } from "@/components/ui/carousel";
+import GameSlide from "@/components/GameSlide";
+import React, { useRef } from "react";
+import { Icons } from "./Icons";
+import { keno_card, dice_card, plinko_card } from "../../assets";
 
-const Header = () => {
+interface HeaderProps {
+  scrollPrev: () => void;
+  scrollNext: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ scrollPrev, scrollNext }) => {
   return (
     <div className="flex justify-between w-full">
       <div className="flex items-center justify-center gap-2">
@@ -13,12 +20,12 @@ const Header = () => {
         <span>Games</span>
       </div>
       <div className="flex gap-6">
-        <span className="flex items-center justify-center rounded-sm p-2 px-3 bg-button font-medium text-sm">See All</span>
+        <span className="flex items-center justify-center p-2 px-3 text-sm font-medium rounded-sm bg-button">See All</span>
         <div className="flex items-center justify-center gap-3">
-          <div className="p-2 rounded-sm bg-button">
+          <div className="p-2 rounded-sm bg-button" onClick={scrollPrev}>
             <IoMdArrowDropleft size={18} />
           </div>
-          <div className="p-2 rounded-sm bg-[#7819F3]">
+          <div className="p-2 rounded-sm bg-[#7819F3]" onClick={scrollNext}>
             <IoMdArrowDropright size={18} />
           </div>
         </div>
@@ -28,14 +35,22 @@ const Header = () => {
 };
 
 const MainGames = () => {
+  const prevRef = useRef<HTMLButtonElement>(null)
+  const nextRef = useRef<HTMLButtonElement>(null)
+
+  const scrollPrev = () => {
+    prevRef?.current?.click();
+  };
+
+  const scrollNext = () => {
+    nextRef?.current?.click();
+  };
+
   return (
-    <div className="flex flex-col w-full gap-6">
-      <Header />
-      <main className="flex justify-evenly">
-        <Image src={keno_card} alt="" width={150} height={238} />
-        <Image src={dice_card} alt="" width={150} height={238} />
-      </main>
-    </div>
+    <>
+      <Header scrollPrev={scrollPrev} scrollNext={scrollNext} />
+      <GameSlide images={[keno_card, dice_card, plinko_card]} prevRef={prevRef} nextRef={nextRef}/>
+    </>
   );
 };
 
