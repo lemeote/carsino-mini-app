@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import { Root } from "@/components/Root/Root";
 
@@ -19,14 +19,17 @@ export const metadata: Metadata = {
   description: "this is TG mini app",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+}
+
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
       <head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
       </head>
       <body className={exo2.className}>
         <Root>{children}</Root>
