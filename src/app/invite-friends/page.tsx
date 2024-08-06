@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import Header from "@/components/Header";
 import { TaskHeader } from "@/components/task-header";
@@ -10,6 +10,11 @@ import { ico_user_heart } from "../../../assets";
 import { taskDropDownList } from "../temp";
 
 const InviteFriends = () => {
+  const router = useRouter();
+  const goToInviteNow = () => {
+    router.push("/invite-friend-now");
+  };
+
   return (
     <>
       <div className="w-full h-full min-h-screen text-white bg-bgcolor">
@@ -27,7 +32,10 @@ const InviteFriends = () => {
                   directly.
                 </span>
               </div>
-              <Button className="px-4 py-2 mb-6 bg-gradient-to-t from-[#929DFF] to-[#6B79FF]">
+              <Button
+                className="px-4 py-2 mb-6 bg-gradient-to-t from-[#929DFF] to-[#6B79FF]"
+                onClick={goToInviteNow}
+              >
                 Invite now
               </Button>
             </div>
