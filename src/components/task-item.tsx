@@ -30,6 +30,9 @@ export const TaskItem: React.FC<Props> = ({
     if (e === "View mission") {
       router.push("/weekly-mission");
     }
+    if (e === "Invite now") {
+      router.push("/invite-friends");
+    }
   };
   return (
     <div className="flex gap-2 p-4 justify-between items-center bg-inherit border border-border-color rounded-3xl">
