@@ -14,9 +14,9 @@ const InviteFriends = () => {
     <>
       <div className="w-full h-full min-h-screen text-white bg-bgcolor">
         <Header imageSrc={ico_user_heart} />
-        <main className="px-6 mt-6 pb-4 overflow-auto">
+        <main className="px-6 mt-6">
           <TaskHeader imgSrc={ico_user_heart} title={"Invite friends"} />
-          <div className="mt-6">
+          <div className="mt-6  overflow-auto">
             <div className="w-full h-full bg-[url('../../../assets/bg_invite_friend.png')] bg-no-repeat bg-cover bg-center rounded-3xl p-4">
               <div className="w-full h-full flex flex-col gap-2 mb-8">
                 <span className="text-[28px] font-extrabold">

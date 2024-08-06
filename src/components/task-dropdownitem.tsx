@@ -10,12 +10,14 @@ const Dropdown: React.FC<Props> = ({ title, content }) => {
 
   return (
     <div className="relative w-full inline-block text-left">
-      <div className="w-full flex justify-between">
+      <div
+        className="w-full flex justify-between"
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <span className="w-[80%]">{title}</span>
         <button
           type="button"
           className="w-5 h-5 bg-white text-black text-sm rounded-full font-bold"
-          onClick={() => setIsOpen(!isOpen)}
         >
           <span className="">{isOpen ? "-" : "+"}</span>
         </button>
