@@ -16,7 +16,7 @@ const Task = () => {
       <div className="w-full h-full min-h-screen text-white bg-bgcolor">
         <Header imageSrc={logo} />
         <main className="px-6 mt-6 pb-32 overflow-auto">
-          <TaskHeader imgSrc={ico_gems}/>
+          <TaskHeader imgSrc={ico_gems} title={'Earn gems'}/>
           <div className="flex flex-col gap-4 mt-6">
             {
               taskItemList.map((item, index) => (

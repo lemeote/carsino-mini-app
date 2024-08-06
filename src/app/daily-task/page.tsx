@@ -12,7 +12,7 @@ const DailyBonus = () => {
     <div className="w-full h-full min-h-screen text-white bg-bgcolor">
       <Header imageSrc={ico_tasks} />
       <main className="px-6 mt-6 pb-4 overflow-auto">
-        <TaskHeader imgSrc={ico_tasks}/>
+        <TaskHeader imgSrc={ico_tasks} title={'Daily task'}/>
         <div className="flex flex-col gap-4 mt-6">
           {taskDailyTaskList.map((item, index) => (
             <div key={index}>

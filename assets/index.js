@@ -1,11 +1,11 @@
-import diamond_icon from "../assets/diamond_icon.svg";
 import dice_card from "../assets/dice_card.png";
 import games_icon from "../assets/games_icon.svg";
 import keno_card from "../assets/keno_card.png";
 import leaderboard from "../assets/leaderboard.svg";
-import logo from "../assets/logo.png";
 import main from "../assets/main.png";
 import user1 from "../assets/user1.png";
+import bg_invite_friend from "../assets/bg_invite_friend.png"
+
 import nav_chat_icon from "../assets/nav_chat_icon.svg";
 import nav_games_icon from "../assets/nav_games_icon.svg";
 import nav_home_icon from "../assets/nav_home_icon.svg";
@@ -15,6 +15,9 @@ import user_avatar from "../assets/user_avatar.svg";
 import gems_icon from "../assets/gems_icon.svg"
 import gems from "../assets/gems.png";
 import plinko_card from "../assets/plinko.png";
+
+import logo from "../assets/logo.png";
+import diamond_icon from "../assets/diamond_icon.svg";
 import noti_ico from "../assets/noti_ico.svg";
 import ico_up from "../assets/ico_up.png";
 import ico_down from "../assets/ico_down.png";
@@ -39,6 +42,7 @@ import ico_monthlychallenge from "../assets/ico_monthlychallenge.png"
 import ico_watchadd from "../assets/ico_watchadd.png"
 import ico_weeklymission from "../assets/ico_weeklymission.png"
 import ico_tasks from "../assets/ico_tasks.svg"
+import ico_user_heart from "../assets/ico_user_heart.png"
 
 export {
   diamond_icon,
@@ -46,6 +50,7 @@ export {
   games_icon,
   keno_card,
   leaderboard,
+  bg_invite_friend,
   logo,
   main,
   nav_chat_icon,
@@ -82,4 +87,5 @@ export {
   ico_watchadd,
   ico_weeklymission,
   ico_tasks,
+  ico_user_heart,
 }

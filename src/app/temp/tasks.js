@@ -192,3 +192,26 @@ export const taskWeeklyMissionList = [
     buttonTitle: "Play",
   },
 ]
+
+export const taskDropDownList = [
+  {
+    title: "How can I invite friends to join the bot?",
+    content: "This is question to join the bot."
+  },
+  {
+    title: "What rewards do I earn for referring friends?",
+    content: "You earn gems for each successful referral. Additionally, you can earn rakeback—a percentage of your referred friends'"
+  },
+  {
+    title: "How do I claim my rakeback earnings?",
+    content: "This is question to join the bot."
+  },
+  {
+    title: "When will I receive my referral rewards?",
+    content: "This is question to join the bot."
+  },
+  {
+    title: "How can I find my referral link?",
+    content: "This is question to join the bot."
+  },
+]
