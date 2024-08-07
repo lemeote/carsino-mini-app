@@ -10,6 +10,7 @@ import {
   taskDropDownList,
   taskInviteRule,
   taskInvitedItemList,
+  taskRewardContent,
 } from "./tasks";
 
 export {
@@ -25,4 +26,5 @@ export {
   taskDropDownList,
   taskInviteRule,
   taskInvitedItemList,
+  taskRewardContent,
 };
