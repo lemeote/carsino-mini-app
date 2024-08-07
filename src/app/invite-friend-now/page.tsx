@@ -41,7 +41,9 @@ const InviteFriendNow = () => {
           <div className="flex flex-col w-full h-full min-h-screen justify-between gap-16 mt-6">
             <div className="flex flex-col gap-4">
               {taskInviteRule.map((item, index) => (
-                <InviteRule index={index + 1} content={item.content} />
+                <div key={index}>
+                  <InviteRule index={index + 1} content={item.content} />
+                </div>
               ))}
             </div>
             <div className="flex flex-col gap-4">
