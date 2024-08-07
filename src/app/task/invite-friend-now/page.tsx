@@ -46,7 +46,7 @@ const InviteFriendNow = () => {
       <div className="w-full h-full min-h-screen text-white bg-bgcolor">
         <Header imageSrc={ico_user_heart} />
         <main className="px-6 mt-6 pb-8 overflow-auto">
-          <TaskHeader imgSrc={ico_user_heart} title={"Daily task"} />
+          <TaskHeader imgSrc={ico_user_heart} title={"Invite friends"} />
           <div className="flex flex-col w-full h-full min-h-screen justify-between gap-16 mt-6">
             <div className="flex flex-col gap-4">
               {taskInviteRule.map((item, index) => (
@@ -74,21 +74,21 @@ const InviteFriendNow = () => {
                       <span className="text-sm font-medium">
                         Alison williams
                       </span>
-                      <span className="text-xs text-[#ffffff30]">
+                      <span className="text-xs text-gray-600">
                         Earn 100 gems
                       </span>
                     </div>
                   </div>
                   <div className="flex flex-col justify-between text-xs">
                     <span>Invited by you</span>
-                    <span className="text-[#ffffff30]">10/24/2024</span>
+                    <span className="text-gray-600">10/24/2024</span>
                   </div>
                 </div>
               </div>
               <div className="bg-basic border border-border-color rounded-3xl p-6 flex flex-col justify-between gap-10">
                 <div className="w-full flex bg-inherit border border-[#ffffff05] rounded-xl">
                   <Input
-                    className="bg-inherit border border-border-color text-[#ffffff30] focus:border-none"
+                    className="bg-inherit border border-border-color text-gray-600 focus:border-none"
                     placeholder="https://examplebot.com/referral?token=your_unique_token_here"
                   />
                   <div className="rounded-r-xl bg-[#7819F3] border border-[#ffffff05] flex justify-center items-center gap-2 px-4">
@@ -103,7 +103,7 @@ const InviteFriendNow = () => {
                   </span>
                 </div>
                 <div className="flex flex-col justify-center items-center gap-4">
-                  <span className="text-sm text-[#ffffff30]">
+                  <span className="text-sm text-gray-600">
                     Share your link
                   </span>
                   <div className="grid grid-cols-5 gap-4">

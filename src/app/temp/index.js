@@ -9,6 +9,7 @@ import {
   taskWeeklyMissionList,
   taskDropDownList,
   taskInviteRule,
+  taskInvitedItemList,
 } from "./tasks";
 
 export {
@@ -23,4 +24,5 @@ export {
   taskWeeklyMissionList,
   taskDropDownList,
   taskInviteRule,
+  taskInvitedItemList,
 };
