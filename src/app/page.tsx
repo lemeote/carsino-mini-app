@@ -18,17 +18,15 @@ const MainCarousel = () => {
 
 export default function Home() {
   return (
-    <>
-      <div className="w-full h-full min-h-screen text-white bg-bgcolor">
-        <Header imageSrc={logo} />
-        <main className="flex flex-col items-center justify-between gap-6 px-6 mt-10">
-          <MainCarousel />
-          <MainGames />
-          <MainEarnGems />
-          <MainLeaderBoard />
-        </main>
-      </div>
+    <div className="w-full h-full min-h-screen text-white bg-bgcolor">
+      <Header imageSrc={logo} />
+      <main className="flex flex-col items-center justify-between gap-6 px-6 mt-10">
+        <MainCarousel />
+        <MainGames />
+        <MainEarnGems />
+        <MainLeaderBoard />
+      </main>
       <Navbar />
-    </>
+    </div>
   );
 }

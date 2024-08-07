@@ -82,30 +82,28 @@ const LiveChatInput = () => {
 
 const LiveChat = () => {
   return (
-    <>
-      <div className="w-full h-full pb-40 text-white min-h-screenpt-0 bg-bgcolor">
-        <header className="sticky top-0 z-50 pb-2 bg-bgcolor">
-          <Header imageSrc={logo} />
-          <LiveChatHeader />
-        </header>
-        <main className="flex flex-col gap-4 px-6 mt-6 pb-28">
-          {chatListData.map((item, index) => (
-            <div key={index}>
-              <ChatItem
-                userImage={item.userImg}
-                userID={item.userID}
-                sendedTime={item.sendedTime}
-                content={item.content}
-              />
-            </div>
-          ))}
-        </main>
-      </div>
-      <div className="fixed w-full p-6 bottom-20">
+    <div className="w-full h-full pb-40 text-white min-h-screen first-line:pt-0 bg-bgcolor">
+      <header className="sticky top-0 z-50 pb-2 bg-bgcolor">
+        <Header imageSrc={logo} />
+        <LiveChatHeader />
+      </header>
+      <main className="flex flex-col gap-4 px-6 mt-6 pb-28">
+        {chatListData.map((item, index) => (
+          <div key={index}>
+            <ChatItem
+              userImage={item.userImg}
+              userID={item.userID}
+              sendedTime={item.sendedTime}
+              content={item.content}
+            />
+          </div>
+        ))}
+      </main>
+      <div className="fixed w-full p-6 bottom-24">
         <LiveChatInput />
       </div>
       <Navbar />
-    </>
+    </div>
   );
 };
 
