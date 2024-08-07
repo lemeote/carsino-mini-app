@@ -19,7 +19,7 @@ const UserInfo = () => {
             <span className="text-2xl">
               <strong>{userinfo.userName}</strong>
             </span>
-            <span className="text-[#ffffff30]">{userinfo.userID}</span>
+            <span className="text-gray-600">{userinfo.userID}</span>
           </div>
         </div>
         <div className="flex flex-col gap-4 mt-6">

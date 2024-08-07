@@ -134,4 +134,33 @@ export const Icons = {
     gems_icon: () => <Image src={gems_icon} alt="" />,
     leaderboard: () => <Image src={leaderboard} alt="" />,
   },
+
+  invitedUserBadge: (props: LucideProps) => (
+    <svg
+      width="80"
+      height="80"
+      viewBox="0 0 63 63"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="-10.4756"
+        y="52.3164"
+        width="88.8011"
+        height="14"
+        transform="rotate(-45 -10.4756 52.3164)"
+        fill="#7819F3"
+      />
+      <text
+        x="-30"
+        y="40"
+        font-family="Verdana"
+        font-size="11"
+        fill="white"
+        transform="rotate(-45)"
+      >
+        {props.textAnchor}
+      </text>
+    </svg>
+  ),
 };

@@ -6,7 +6,9 @@ import {
   ico_monthlychallenge,
   ico_watchadd,
   ico_weeklymission,
-} from "../../../assets";
+  user1,
+  user_avatar,
+} from "@assets";
 
 
 export const taskItemList = [
@@ -228,5 +230,58 @@ export const taskInviteRule = [
   },
   {
     content: "You and your friends earn gems rewards when your friend open account"
+  },
+]
+
+export const taskInvitedItemList = [
+  {
+    userName: "Alison williams",
+    userID: "alison_321",
+    earnedAmount: 300,
+    userImage: ico_dailytasks,
+    inviteBadge: "Top invited"
+  },
+  {
+    userName: "text",
+    userID: "alison_321",
+    earnedAmount: 300,
+    userImage: user_avatar,
+    inviteBadge: "2nd invited"
+  },
+  {
+    userName: "Mark Henry",
+    userID: "test",
+    earnedAmount: 50,
+    userImage: ico_dailytasks,
+  },
+  {
+    userName: "Jennis",
+    userID: "jennis_321",
+    earnedAmount: 100,
+    userImage: user1,
+  },
+  {
+    userName: "Alison williams",
+    userID: "alison_321",
+    earnedAmount: 300,
+    userImage: ico_dailytasks,
+  },
+  {
+    userName: "Alison williams",
+    userID: "alison_321",
+    earnedAmount: 300,
+    userImage: ico_dailytasks,
+  },
+  {
+    userName: "Alison williams",
+    userID: "alison_321",
+    earnedAmount: 300,
+    userImage: ico_dailytasks,
+  },
+  {
+    userName: "Alison williams",
+    userID: "alison_321",
+    earnedAmount: 300,
+    userImage: ico_dailytasks,
   },
 ]
