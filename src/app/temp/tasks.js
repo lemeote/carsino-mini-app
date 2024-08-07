@@ -215,3 +215,18 @@ export const taskDropDownList = [
     content: "This is question to join the bot."
   },
 ]
+
+export const taskInviteRule = [
+  {
+    content: "Share your referral link/code with your feiends"
+  },
+  {
+    content: "Your friend registers on robertgamba using referral link/code"
+  },
+  {
+    content: "When a friend clicks the link and signs up on the platform, they become a referred user"
+  },
+  {
+    content: "You and your friends earn gems rewards when your friend open account"
+  },
+]
