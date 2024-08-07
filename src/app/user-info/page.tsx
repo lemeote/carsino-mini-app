@@ -1,12 +1,11 @@
-"use client"
+"use client";
 
-import Image from "next/image"
+import Image from "next/image";
 
-import Header from "@/components/Header"
-import { user_avatar } from "../../../assets"
-import ItemList from "@/components/profile-itemlist"
-import { userinfo, useritem } from "../temp"
-
+import Header from "@/components/Header";
+import { user_avatar } from "@assets";
+import ItemList from "@/components/profile-itemlist";
+import { userinfo, useritem } from "@temp";
 
 const UserInfo = () => {
   return (
@@ -20,25 +19,21 @@ const UserInfo = () => {
             <span className="text-2xl">
               <strong>{userinfo.userName}</strong>
             </span>
-            <span className="text-[#ffffff30]">
-              {userinfo.userID}
-            </span>
+            <span className="text-[#ffffff30]">{userinfo.userID}</span>
           </div>
         </div>
         <div className="flex flex-col gap-4 mt-6">
-          {
-            useritem.map((item, index) => (
-              <ItemList title={item.title} param={item.param} key={index} />
-            ))
-          }
+          {useritem.map((item, index) => (
+            <ItemList title={item.title} param={item.param} key={index} />
+          ))}
         </div>
       </div>
       <div className="flex items-center justify-center bg-[#7819F3] rounded-xl h-14 cursor-pointer mb-8">
         <span>Save changes</span>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const UserProfile = () => {
   return (
@@ -49,7 +44,7 @@ const UserProfile = () => {
         <UserInfo />
       </main>
     </div>
-  )
-}
+  );
+};
 
 export default UserProfile;

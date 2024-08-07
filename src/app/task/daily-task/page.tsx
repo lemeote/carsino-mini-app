@@ -2,8 +2,8 @@
 
 import Header from "@/components/Header"
 import { TaskHeader } from "@/components/task-header"
-import { taskDailyTaskList } from "../temp"
-import { ico_tasks } from "../../../assets"
+import { taskDailyTaskList } from "@temp"
+import { ico_tasks } from "@assets"
 import { TaskItem } from "@/components/task-item"
 
 const DailyBonus = () => {

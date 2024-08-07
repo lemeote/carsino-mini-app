@@ -3,55 +3,62 @@ import { useRouter } from "next/navigation";
 import Image, { StaticImageData } from "next/image";
 
 import { Progress } from "@radix-ui/react-progress";
-import { Icons } from "./Icons"
-import { ico_down, ico_up, user_avatar } from "../../assets";
+import { Icons } from "./Icons";
+import { ico_down, ico_up, user_avatar } from "@assets";
 import { leaerboardUserList } from "@/app/temp";
 
 interface UserInfoProps {
-  index: number
-  userStatus: string,
-  userImage: StaticImageData,
-  userName: string,
-  userId: string,
-  amount: number,
+  index: number;
+  userStatus: string;
+  userImage: StaticImageData;
+  userName: string;
+  userId: string;
+  amount: number;
 }
-
 
 const Header = () => {
   const router = useRouter();
   const gotoleaderboard = () => {
     router.push("/leaderboard");
-  }
-  
+  };
+
   return (
     <div className="flex justify-between w-full">
       <div className="flex items-center justify-center gap-2">
         <Icons.mainIcon.leaderboard />
         <span>Learderboard</span>
       </div>
-      <div className="flex items-center justify-center p-2 px-3 rounded-sm cursor-pointer bg-button" onClick={gotoleaderboard}>
+      <div
+        className="flex items-center justify-center p-2 px-3 rounded-sm cursor-pointer bg-button"
+        onClick={gotoleaderboard}
+      >
         <span className="text-sm font-medium">View leaderboard</span>
       </div>
     </div>
   );
 };
 
-const RankItem: React.FC<UserInfoProps> = ({ index, userStatus, userImage, userName, userId, amount }) => {
+const RankItem: React.FC<UserInfoProps> = ({
+  index,
+  userStatus,
+  userImage,
+  userName,
+  userId,
+  amount,
+}) => {
   return (
     <div className="flex items-center justify-between w-full p-5 border border-border-color rounded-xl">
       <div className="flex items-center justify-center gap-2">
         <span>{index + 1}</span>
-        {userStatus == "up" ?
-          <Image src={ico_up} alt="" /> : <Image src={ico_down} alt="" />
-        }
+        {userStatus == "up" ? (
+          <Image src={ico_up} alt="" />
+        ) : (
+          <Image src={ico_down} alt="" />
+        )}
         <Image src={userImage} alt="" width={42} height={42} />
         <div className="flex flex-col items-left">
-          <span className="text-sm font-semibold ">
-            {userName}
-          </span>
-          <span className="text-xs font-medium">
-            {userId}
-          </span>
+          <span className="text-sm font-semibold ">{userName}</span>
+          <span className="text-xs font-medium">{userId}</span>
         </div>
       </div>
       <div className="flex gap-2">
@@ -61,8 +68,8 @@ const RankItem: React.FC<UserInfoProps> = ({ index, userStatus, userImage, userN
         <Icons.mainIcon.gems_icon />
       </div>
     </div>
-  )
-}
+  );
+};
 
 const UserRank = () => {
   return (
@@ -72,12 +79,8 @@ const UserRank = () => {
         <Image src={ico_down} alt="" />
         <Image src={user_avatar} alt="" width={42} height={42} />
         <div className="flex flex-col items-start">
-          <span className="text-sm font-semibold ">
-            {'me'}
-          </span>
-          <span className="text-xs font-medium text-left ">
-            {"@mean"}
-          </span>
+          <span className="text-sm font-semibold ">{"me"}</span>
+          <span className="text-xs font-medium text-left ">{"@mean"}</span>
         </div>
       </div>
       <div className="flex gap-2">
@@ -88,19 +91,23 @@ const UserRank = () => {
       </div>
     </div>
   );
-}
-
+};
 
 const ProgressDemo = () => {
-  const [progress, setProgress] = React.useState(0)
+  const [progress, setProgress] = React.useState(0);
 
   React.useEffect(() => {
-    const timer = setTimeout(() => setProgress(66), 500)
-    return () => clearTimeout(timer)
-  }, [])
+    const timer = setTimeout(() => setProgress(66), 500);
+    return () => clearTimeout(timer);
+  }, []);
 
-  return <Progress value={progress} className="w-[100px] h-[6px] rounded-full bg-button" />
-}
+  return (
+    <Progress
+      value={progress}
+      className="w-[100px] h-[6px] rounded-full bg-button"
+    />
+  );
+};
 
 const LoadMore = () => {
   return (
@@ -114,8 +121,8 @@ const LoadMore = () => {
         <span>Load more</span>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const MainLeaderBoard = () => {
   return (
@@ -125,7 +132,14 @@ const MainLeaderBoard = () => {
         <UserRank />
         {leaerboardUserList.map((item, index) => (
           <div key={index}>
-            <RankItem index={index} userImage={item.userImage} userStatus={item.userStatus} userId={item.userId} userName={item.userName} amount={item.amount} />
+            <RankItem
+              index={index}
+              userImage={item.userImage}
+              userStatus={item.userStatus}
+              userId={item.userId}
+              userName={item.userName}
+              amount={item.amount}
+            />
           </div>
         ))}
       </main>
@@ -134,4 +148,4 @@ const MainLeaderBoard = () => {
   );
 };
 
-export default MainLeaderBoard
+export default MainLeaderBoard;

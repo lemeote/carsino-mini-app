@@ -2,8 +2,8 @@ import Image from "next/image";
 import { IoMdArrowDropleft } from "react-icons/io";
 import { IoMdArrowDropright } from "react-icons/io";
 
-import { Icons } from "./Icons"
-import { gems, main } from "../../assets";
+import { Icons } from "./Icons";
+import { gems, main } from "@assets";
 import Carousel from "./Carousel";
 
 const Header = () => {
@@ -14,7 +14,9 @@ const Header = () => {
         <span>Earn Gems</span>
       </div>
       <div className="flex gap-6">
-        <span className="flex items-center justify-center p-2 px-3 text-sm font-medium rounded-sm bg-button">See All</span>
+        <span className="flex items-center justify-center p-2 px-3 text-sm font-medium rounded-sm bg-button">
+          See All
+        </span>
         <div className="flex items-center justify-center gap-3">
           <div className="p-2 rounded-sm bg-button">
             <IoMdArrowDropleft size={18} />
@@ -37,6 +39,6 @@ const MainEarnGems = () => {
       </div>
     </>
   );
-}
+};
 
 export default MainEarnGems;

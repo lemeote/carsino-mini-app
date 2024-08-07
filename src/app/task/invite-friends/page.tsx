@@ -6,13 +6,13 @@ import Header from "@/components/Header";
 import { TaskHeader } from "@/components/task-header";
 import { Button } from "@/components/ui/button";
 import Dropdown from "@/components/task-dropdownitem";
-import { ico_user_heart } from "../../../assets";
-import { taskDropDownList } from "../temp";
+import { ico_user_heart } from "@assets";
+import { taskDropDownList } from "@temp";
 
 const InviteFriends = () => {
   const router = useRouter();
   const goToInviteNow = () => {
-    router.push("/invite-friend-now");
+    router.push("/task/invite-friend-now");
   };
 
   return (

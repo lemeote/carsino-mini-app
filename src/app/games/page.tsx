@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
 import Header from "@/components/Header";
 import GamesList from "@/components/games-list";
-import { logo } from "../../../assets";
+import { logo } from "@assets";
 import { Navbar } from "@/components/Navbar";
 
 const Game = () => {
@@ -17,6 +17,6 @@ const Game = () => {
       <Navbar />
     </>
   );
-}
+};
 
 export default Game;

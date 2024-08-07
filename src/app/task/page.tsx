@@ -4,8 +4,8 @@ import Header from "@/components/Header"
 import { Navbar } from "@/components/Navbar"
 import { TaskItem } from "@/components/task-item"
 import { TaskHeader } from "@/components/task-header"
-import { taskItemList } from "../temp"
-import { ico_gems, logo } from "../../../assets"
+import { taskItemList } from "@temp"
+import { ico_gems, logo } from "@assets"
 
 
 

@@ -1,6 +1,8 @@
 const InviteFriendsList = () => {
     return (
-        <div></div>
+        <div>
+            <span>this is invite friends list page.</span>
+        </div>
     )
 }
 
