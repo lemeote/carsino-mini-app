@@ -12,7 +12,7 @@ import { taskDropDownList } from "@temp";
 const InviteFriends = () => {
   const router = useRouter();
   const goToInviteNow = () => {
-    router.push("/task/invite-friend-now");
+    router.push("invite-friend-now");
   };
 
   return (

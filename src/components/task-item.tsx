@@ -20,16 +20,16 @@ export const TaskItem: React.FC<Props> = ({
   const router = useRouter();
   const gotoDetailItem = (e: string) => {
     if (e === "Claim now") {
-      router.push("/task/daily-bonus");
+      router.push("daily-bonus");
     }
     if (e === "View task") {
-      router.push("/task/daily-task");
+      router.push("daily-task");
     }
     if (e === "View mission") {
-      router.push("/task/weekly-mission");
+      router.push("weekly-mission");
     }
     if (e === "Invite now") {
-      router.push("/task/invite-friends");
+      router.push("invite-friends");
     }
   };
   return (

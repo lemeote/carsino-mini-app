@@ -15,7 +15,7 @@ import {
   ico_instagram,
   ico_share,
   user_avatar,
-} from "../../../../assets";
+} from "@assets";
 import { taskInviteRule } from "@temp";
 
 interface Props {
@@ -39,8 +39,12 @@ const InviteRule: React.FC<Props> = ({ index, content }) => {
 const InviteFriendNow = () => {
   const router = useRouter();
   const goToInviteFriendsList = () => {
-    router.push("/task/invite-friends-list");
+    router.push("invite-friends-list");
   };
+  const goToRewardContent = () => {
+    router.push("invite-reward");
+  };
+
   return (
     <>
       <div className="w-full h-full min-h-screen text-white bg-bgcolor">
@@ -61,7 +65,7 @@ const InviteFriendNow = () => {
                   <span className="text-sm">
                     You have referred total 01 friends
                   </span>
-                  <span className="text-xs" onClick={goToInviteFriendsList}>
+                  <span className="text-xs cursor-pointer" onClick={goToInviteFriendsList}>
                     See all
                   </span>
                 </div>
@@ -96,16 +100,17 @@ const InviteFriendNow = () => {
                     <span>Copy</span>
                   </div>
                 </div>
-                <div className="w-full flex bg-inherit border border-[#ffffff05] rounded-xl justify-between items-center p-2">
+                <div
+                  className="w-full flex bg-inherit border border-[#ffffff05] rounded-xl justify-between items-center p-2 cursor-pointer"
+                  onClick={goToRewardContent}
+                >
                   <span>What rewards you will get</span>
                   <span className="w-5 h-5 rounded-full bg-white text-black font-bold p-1 flex items-center justify-center">
                     ?
                   </span>
                 </div>
                 <div className="flex flex-col justify-center items-center gap-4">
-                  <span className="text-sm text-gray-600">
-                    Share your link
-                  </span>
+                  <span className="text-sm text-gray-600">Share your link</span>
                   <div className="grid grid-cols-5 gap-4">
                     <Image src={ico_linkedin} alt="" />
                     <Image src={ico_whatsapp} alt="" />
