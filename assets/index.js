@@ -43,6 +43,12 @@ import ico_watchadd from "../assets/ico_watchadd.png"
 import ico_weeklymission from "../assets/ico_weeklymission.png"
 import ico_tasks from "../assets/ico_tasks.svg"
 import ico_user_heart from "../assets/ico_user_heart.png"
+import ico_copy from "../assets/ico_copy.svg"
+import ico_linkedin from "../assets/ico_linkedin.svg"
+import ico_whatsapp from "../assets/ico_whatsapp.svg"
+import ico_share_line from "../assets/ico_share_line.svg"
+import ico_instagram from "../assets/ico_instagram.svg"
+import ico_share from "../assets/ico_share.svg"
 
 export {
   diamond_icon,
@@ -88,4 +94,10 @@ export {
   ico_weeklymission,
   ico_tasks,
   ico_user_heart,
+  ico_copy,
+  ico_linkedin,
+  ico_whatsapp,
+  ico_share_line,
+  ico_instagram,
+  ico_share,
 }
