@@ -285,3 +285,21 @@ export const taskInvitedItemList = [
     userImage: ico_dailytasks,
   },
 ]
+
+export const taskRewardContent = [
+  {
+    content: "You receive 10% of the losses incurred by Telegram Premium users you have referred"
+  },
+  {
+    content: "You receive 5% of the losses from normal users you have referred."
+  },
+  {
+    content: "A successful referral will earn you 100 gems."
+  },
+  {
+    content: "Your friend will also receive 100 gems."
+  },
+  {
+    content: "Your friend will also receive 100 gems."
+  },
+]
