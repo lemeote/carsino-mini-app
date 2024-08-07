@@ -7,8 +7,8 @@ import { Icons } from "./Icons";
 
 interface Route {
   path: string;
-  title?: string;
-  icon?: any;
+  title: string;
+  icon: any;
 }
 
 export const route: Route[] = [
@@ -34,7 +34,7 @@ export const route: Route[] = [
   },
   {
     path: "/leaderboard",
-    title: "LeaderBoard",
+    title: "Leader Board",
     icon: (color: string) => <Icons.navigator.leaderboard color={color} />,
   },
 ];
@@ -72,7 +72,7 @@ export const Navbar = () => {
   }, [pathname, updateActiveState]);
 
   return (
-    <div className="fixed bottom-0 w-full h-[100px] flex justify-between px-2 gap-2 z-10 bg-button rounded-t-[32px]">
+    <div className="fixed bottom-0 w-full h-[100px] flex justify-between px-2 z-10 bg-button rounded-t-[32px]">
       {route.map((item, index) => {
         return (
           <div
@@ -91,7 +91,7 @@ export const Navbar = () => {
             >
               {item.icon(active === index ? "#DBD0E8" : "#584D74")}
               <span
-                className={`text-xs ${
+                className={`text-xs text-center ${
                   item.path == pathname ? "hidden" : "block"
                 }`}
               >
