@@ -5,6 +5,7 @@ import leaderboard from "../assets/leaderboard.svg";
 import main from "../assets/main.png";
 import user1 from "../assets/user1.png";
 import bg_invite_friend from "../assets/bg_invite_friend.png"
+import bg_invited_friends_list from "../assets/bg_invited_friend_list.png"
 
 import nav_chat_icon from "../assets/nav_chat_icon.svg";
 import nav_games_icon from "../assets/nav_games_icon.svg";
@@ -57,6 +58,7 @@ export {
   keno_card,
   leaderboard,
   bg_invite_friend,
+  bg_invited_friends_list,
   logo,
   main,
   nav_chat_icon,
