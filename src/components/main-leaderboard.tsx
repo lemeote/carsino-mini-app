@@ -4,16 +4,22 @@ import Image, { StaticImageData } from "next/image";
 
 import { Progress } from "@radix-ui/react-progress";
 import { Icons } from "./Icons";
-import { ico_down, ico_up, user_avatar } from "@assets";
-import { leaerboardUserList } from "@/app/temp";
+import {
+  ico_down,
+  ico_up,
+  ico_gold_medal,
+  ico_2nd_medal,
+  ico_3rd_medal,
+} from "@assets";
+import { leaderboardUserList, userRank } from "@/app/temp";
 
 interface UserInfoProps {
-  index: number;
   userStatus: string;
   userImage: StaticImageData;
   userName: string;
   userId: string;
   amount: number;
+  rank: number;
 }
 
 const Header = () => {
@@ -38,8 +44,21 @@ const Header = () => {
   );
 };
 
-const RankItem: React.FC<UserInfoProps> = ({
-  index,
+const Rank = ({ index }: { index: number }) => {
+  switch (index) {
+    case 1:
+      return <Image src={ico_gold_medal} alt="Gold Medal" />;
+    case 2:
+      return <Image src={ico_2nd_medal} alt="Silver Medal" />;
+    case 3:
+      return <Image src={ico_3rd_medal} alt="Bronze Medal" />;
+    default:
+      return <span>{index + 1}</span>;
+  }
+};
+
+export const RankItem: React.FC<UserInfoProps> = ({
+  rank,
   userStatus,
   userImage,
   userName,
@@ -49,15 +68,19 @@ const RankItem: React.FC<UserInfoProps> = ({
   return (
     <div className="flex items-center justify-between w-full p-5 border border-border-color rounded-xl">
       <div className="flex items-center justify-center gap-2">
-        <span>{index + 1}</span>
-        {userStatus == "up" ? (
-          <Image src={ico_up} alt="" />
-        ) : (
-          <Image src={ico_down} alt="" />
-        )}
-        <Image src={userImage} alt="" width={42} height={42} />
+        <div>
+          <Rank index={rank} />
+        </div>
+        <div>
+          {userStatus === "up" ? (
+            <Image src={ico_up} alt="Up Arrow" />
+          ) : (
+            <Image src={ico_down} alt="Down Arrow" />
+          )}
+        </div>
+        <Image src={userImage} alt={userName} width={42} height={42} />
         <div className="flex flex-col items-left">
-          <span className="text-sm font-semibold ">{userName}</span>
+          <span className="text-sm font-semibold">{userName}</span>
           <span className="text-xs font-medium">{userId}</span>
         </div>
       </div>
@@ -71,21 +94,32 @@ const RankItem: React.FC<UserInfoProps> = ({
   );
 };
 
-const UserRank = () => {
+export const UserRank: React.FC<UserInfoProps> = ({
+  rank,
+  userStatus,
+  userImage,
+  userName,
+  userId,
+  amount,
+}) => {
   return (
     <div className="flex items-center justify-between w-full p-2 px-5 bg-button rounded-xl">
       <div className="flex items-center justify-center gap-2">
-        <span>{"203"}</span>
-        <Image src={ico_down} alt="" />
-        <Image src={user_avatar} alt="" width={42} height={42} />
+        <span>{rank}</span>
+        {userStatus === "up" ? (
+          <Image src={ico_up} alt="Up Arrow" />
+        ) : (
+          <Image src={ico_down} alt="Down Arrow" />
+        )}
+        <Image src={userImage} alt={userName} width={42} height={42} />
         <div className="flex flex-col items-start">
-          <span className="text-sm font-semibold ">{"me"}</span>
-          <span className="text-xs font-medium text-left ">{"@mean"}</span>
+          <span className="text-sm font-semibold ">{userName}</span>
+          <span className="text-xs font-medium text-left ">{userId}</span>
         </div>
       </div>
       <div className="flex gap-2">
         <span className="flex items-center justify-center text-xs font-medium">
-          {2019}
+          {amount}
         </span>
         <Icons.mainIcon.gems_icon />
       </div>
@@ -129,11 +163,18 @@ const MainLeaderBoard = () => {
     <div className="flex flex-col w-full gap-6 pb-28">
       <Header />
       <main className="flex flex-col gap-4">
-        <UserRank />
-        {leaerboardUserList.map((item, index) => (
+        <UserRank
+          rank={userRank.rank}
+          userId={userRank.userId}
+          userName={userRank.userName}
+          userImage={userRank.userImage}
+          userStatus={userRank.userStatus}
+          amount={userRank.amount}
+        />
+        {leaderboardUserList.map((item, index) => (
           <div key={index}>
             <RankItem
-              index={index}
+              rank={item.rank}
               userImage={item.userImage}
               userStatus={item.userStatus}
               userId={item.userId}

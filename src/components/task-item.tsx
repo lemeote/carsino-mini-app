@@ -31,6 +31,9 @@ export const TaskItem: React.FC<Props> = ({
     if (e === "Invite now") {
       router.push("/task/invite-friends");
     }
+    if (e === "Leaderboard") {
+      router.push('/leaderboard');
+    }
   };
   return (
     <div className="flex gap-2 p-4 justify-between items-center bg-inherit border border-border-color rounded-3xl">
