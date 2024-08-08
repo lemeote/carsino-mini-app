@@ -6,6 +6,8 @@ import main from "../assets/main.png";
 import user1 from "../assets/user1.png";
 import bg_invite_friend from "../assets/bg_invite_friend.png"
 import bg_invited_friends_list from "../assets/bg_invited_friend_list.png"
+import bg_union from "../assets/bg_union.svg"
+import bg_leaderboard_rank from "../assets/bg_leaderboard_rank.svg"
 
 import nav_chat_icon from "../assets/nav_chat_icon.svg";
 import nav_games_icon from "../assets/nav_games_icon.svg";
@@ -50,6 +52,9 @@ import ico_whatsapp from "../assets/ico_whatsapp.svg"
 import ico_share_line from "../assets/ico_share_line.svg"
 import ico_instagram from "../assets/ico_instagram.svg"
 import ico_share from "../assets/ico_share.svg"
+import ico_gold_medal from "../assets/ico_gold_medal.svg"
+import ico_2nd_medal from "../assets/ico_2nd_medal.svg"
+import ico_3rd_medal from "../assets/ico_3rd_medal.svg"
 
 export {
   diamond_icon,
@@ -61,6 +66,8 @@ export {
   bg_invited_friends_list,
   logo,
   main,
+  bg_leaderboard_rank,
+  bg_union,
   nav_chat_icon,
   nav_games_icon,
   nav_home_icon,
@@ -102,4 +109,7 @@ export {
   ico_share_line,
   ico_instagram,
   ico_share,
+  ico_gold_medal,
+  ico_2nd_medal,
+  ico_3rd_medal,
 }

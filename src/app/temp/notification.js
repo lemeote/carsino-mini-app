@@ -1,4 +1,4 @@
-import {ico_chart, ico_earning, ico_flower, ico_gift, ico_medal, ico_prize, ico_warining } from "../../../assets"
+import {ico_chart, ico_earning, ico_flower, ico_gift, ico_medal, ico_prize, ico_warining } from "@assets"
 
 const name = "Alison williams";
 
