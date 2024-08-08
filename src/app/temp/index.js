@@ -3,10 +3,8 @@ import { chatListData } from "./chat";
 import { notiList } from "./notification";
 import {
   leaderboardUserList,
-  leaderboardUserDailyRankList,
-  leaderboardUserWeeklyRankList,
   leaderboardEarnedRank,
-  userRank,
+  myRank,
 } from "./leaderboard";
 import {
   taskItemList,
@@ -25,10 +23,8 @@ export {
   chatListData,
   notiList,
   leaderboardUserList,
-  leaderboardUserDailyRankList,
-  leaderboardUserWeeklyRankList,
   leaderboardEarnedRank,
-  userRank,
+  myRank,
   taskItemList,
   taskDailyBonusList,
   taskDailyTaskList,

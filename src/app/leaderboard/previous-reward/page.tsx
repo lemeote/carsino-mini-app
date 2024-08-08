@@ -8,9 +8,9 @@ import Header from "@/components/Header";
 import { Icons } from "@/components/Icons";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Navbar } from "@/components/Navbar";
-import { RankItem, MyRank } from "@/components/main-leaderboard";
-import { myRank, leaderboardUserList, leaderboardEarnedRank } from "@temp";
-import { bg_union, logo } from "@assets";
+import { RewardRankItem } from "@/components/main-leaderboard";
+import { leaderboardUserList } from "@temp";
+import { ico_earning, ico_right_arrow } from "@assets";
 
 const LeaderBoardHeader = () => {
   return (
@@ -19,53 +19,25 @@ const LeaderBoardHeader = () => {
         <div className="w-6 h-6">
           <Icons.mainIcon.leaderboard />
         </div>
-        <span className="text-lg font-bold">leaderboard</span>
-      </div>
-      <div className="bg-inherit text-gray-600 border border-border-color rounded-xl px-3 py-1 cursor-default flex gap-2 justify-center items-center">
-        <span className="w-5 h-5 rounded-full bg-gray-600 text-black font-bold p-1 flex items-center justify-center">
-          !
-        </span>
-        <span>How it works</span>
+        <span className="text-lg font-bold">Previous winnings</span>
       </div>
     </div>
   );
 };
 
-const EarnedRank = () => {
-  const router = useRouter();
-  const goToPreviousRewards = () => {
-    router.push("/leaderboard/previous-reward");
-  };
+const MyReward = () => {
   return (
-    <div className="w-full h-full bg-[url('../../../assets/bg_invite_friend.png')] bg-no-repeat bg-cover bg-center rounded-3xl p-4 flex flex-col gap-5">
-      <div className="flex flex-wrap gap-3 justify-center">
-        <div className="flex flex-col">
-          <span className="text-xl font-extrabold text-center">
-            Battle for the Top
-          </span>
-          <span className="text-sm font-medium text-center">
-            Ends in: 15h 07m 38s
-          </span>
-        </div>
-        <div
-          className="bg-gradient-to-t from-[#929DFF] to-[#6B79FF] flex justify-center items-center px-3 py-1 rounded-xl"
-          onClick={goToPreviousRewards}
-        >
-          <span className="text-xs font-semibold text-center ">
-            Previous winnings
-          </span>
-        </div>
+    <div className="flex items-center justify-between w-full p-4 bg-[#7819F3] border border-gray-400 rounded-xl mb-6">
+      <div className="flex gap-2 justify-center items-center">
+        <span>My rewards</span>
+        <Image src={ico_right_arrow} alt="" />
       </div>
-      <div className="flex flex-wrap justify-center gap-2">
-        {leaderboardEarnedRank.map((item, index) => (
-          <div className="relative" key={index}>
-            <Image src={bg_union} alt="" />
-            <div className="absolute flex flex-col justify-center items-center top-0 left-0 w-full h-full text-xs">
-              <span>{item.rank}</span>
-              <span>{item.earned}</span>
-            </div>
-          </div>
-        ))}
+      <div className="flex flex-col text-right">
+        <div className="flex gap-2 items-center">
+          <span className="text-xs text-gray-400">1206</span>
+          <Icons.mainIcon.gems_icon />
+        </div>
+        <span className="text-xs">230$</span>
       </div>
     </div>
   );
@@ -76,7 +48,7 @@ const LeaderBoard = () => {
 
   return (
     <div className="w-full h-full pb-40 text-white min-h-screen pt-0 bg-bgcolor">
-      <Header imageSrc={logo} />
+      <Header imageSrc={ico_earning} />
       <LeaderBoardHeader />
       <main className="p-6">
         <Tabs defaultValue="Daily">
@@ -122,75 +94,54 @@ const LeaderBoard = () => {
             </TabsTrigger>
           </TabsList>
           <TabsContent value="Daily">
+            <MyReward />
             <div className="flex flex-col gap-4">
-              <EarnedRank />
-              <MyRank
-                rank={myRank.rank}
-                userId={myRank.userId}
-                userName={myRank.userName}
-                userImage={myRank.userImage}
-                userStatus={myRank.userStatus}
-                amount={myRank.amount}
-              />
               {leaderboardUserList.map((item, index) => (
                 <div key={index}>
-                  <RankItem
+                  <RewardRankItem
                     rank={item.rank}
                     userImage={item.userImage}
                     userStatus={item.userStatus}
                     userId={item.userId}
                     userName={item.userName}
                     amount={item.amount}
+                    earnedAmount={item.earnedAmount}
                   />
                 </div>
               ))}
             </div>
           </TabsContent>
           <TabsContent value="Weekly">
+            <MyReward />
             <div className="flex flex-col gap-4">
-              <EarnedRank />
-              <MyRank
-                rank={myRank.rank}
-                userId={myRank.userId}
-                userName={myRank.userName}
-                userImage={myRank.userImage}
-                userStatus={myRank.userStatus}
-                amount={myRank.amount}
-              />
               {leaderboardUserList.map((item, index) => (
                 <div key={index}>
-                  <RankItem
+                  <RewardRankItem
                     rank={item.rank}
                     userImage={item.userImage}
                     userStatus={item.userStatus}
                     userId={item.userId}
                     userName={item.userName}
                     amount={item.amount}
+                    earnedAmount={item.earnedAmount}
                   />
                 </div>
               ))}
             </div>
           </TabsContent>
           <TabsContent value="Monthly">
+            <MyReward />
             <div className="flex flex-col gap-4">
-              <EarnedRank />
-              <MyRank
-                rank={myRank.rank}
-                userId={myRank.userId}
-                userName={myRank.userName}
-                userImage={myRank.userImage}
-                userStatus={myRank.userStatus}
-                amount={myRank.amount}
-              />
               {leaderboardUserList.map((item, index) => (
                 <div key={index}>
-                  <RankItem
+                  <RewardRankItem
                     rank={item.rank}
                     userImage={item.userImage}
                     userStatus={item.userStatus}
                     userId={item.userId}
                     userName={item.userName}
                     amount={item.amount}
+                    earnedAmount={item.earnedAmount}
                   />
                 </div>
               ))}

@@ -55,6 +55,7 @@ import ico_share from "../assets/ico_share.svg"
 import ico_gold_medal from "../assets/ico_gold_medal.svg"
 import ico_2nd_medal from "../assets/ico_2nd_medal.svg"
 import ico_3rd_medal from "../assets/ico_3rd_medal.svg"
+import ico_right_arrow from "../assets/ico_right_arrow.svg"
 
 export {
   diamond_icon,
@@ -112,4 +113,5 @@ export {
   ico_gold_medal,
   ico_2nd_medal,
   ico_3rd_medal,
+  ico_right_arrow
 }
