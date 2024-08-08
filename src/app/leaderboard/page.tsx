@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import Header from "@/components/Header";
 import { Icons } from "@/components/Icons";
@@ -16,6 +17,7 @@ import {
   leaderboardEarnedRank,
 } from "@temp";
 import { bg_union, logo } from "@assets";
+
 
 const LeaderBoardHeader = () => {
   return (
@@ -37,6 +39,10 @@ const LeaderBoardHeader = () => {
 };
 
 const EarnedRank = () => {
+  const router = useRouter();
+  const goToPreviousRewards = () => {
+    router.push("/leaderboard/previous-reward");
+  }
   return (
     <div className="w-full h-full bg-[url('../../../assets/bg_invite_friend.png')] bg-no-repeat bg-cover bg-center rounded-3xl p-4 flex flex-col gap-5">
       <div className="flex flex-wrap gap-3 justify-center">
@@ -48,7 +54,7 @@ const EarnedRank = () => {
             Ends in: 15h 07m 38s
           </span>
         </div>
-        <div className="rounded-sm bg-gradient-to-t from-[#929DFF] to-[#6B79FF] flex justify-center items-center px-3 py-2">
+        <div className="rounded-sm bg-gradient-to-t from-[#929DFF] to-[#6B79FF] flex justify-center items-center px-3 py-2" onClick={goToPreviousRewards}>
           <span className="text-xs font-semibold text-center ">
             Previous winnings
           </span>
