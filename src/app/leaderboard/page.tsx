@@ -48,7 +48,7 @@ const EarnedRank = () => {
           </span>
         </div>
         <div
-          className="bg-gradient-to-t from-[#929DFF] to-[#6B79FF] flex justify-center items-center px-3 py-1 rounded-xl"
+          className="bg-gradient-to-t from-[#929DFF] to-[#6B79FF] flex justify-center items-center px-3 py-1 rounded-xl cursor-pointer"
           onClick={goToPreviousRewards}
         >
           <span className="text-xs font-semibold text-center ">
