@@ -154,7 +154,6 @@ const LeaderBoardPreviousReward = () => {
           </TabsContent>
         </Tabs>
       </main>
-      <Navbar />
     </div>
   );
 };

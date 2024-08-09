@@ -54,7 +54,6 @@ const WhyUnpaid = () => {
           </div>
         </div>
       </main>
-      <Navbar />
     </div>
   );
 };
