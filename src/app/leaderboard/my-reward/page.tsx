@@ -120,7 +120,6 @@ const LeaderBoardMyReward = () => {
           </TabsContent>
         </Tabs>
       </main>
-      <Navbar />
     </div>
   );
 };
