@@ -32,6 +32,14 @@ interface EarnedRankInfoProps {
   earnedAmount: number;
 }
 
+interface RewardInfoProps {
+  PayDate: Date;
+  amount: number;
+  earnedAmount: number;
+  payStatus: boolean;
+}
+
+
 const Header = () => {
   const router = useRouter();
   const gotoleaderboard = () => {
@@ -65,6 +73,17 @@ const Rank = ({ index }: { index: number }) => {
     default:
       return <span>{index + 1}</span>;
   }
+};
+
+const CustomDate = ({ date } : {date: Date}) => {
+  const options: Intl.DateTimeFormatOptions = {
+    month: 'long',
+    year: 'numeric',
+  };
+
+  return (
+    <span className="text-sm font-semibold">{date.toLocaleDateString('en-US', options)}</span>
+  );
 };
 
 export const RankItem: React.FC<UserInfoProps> = ({
@@ -173,6 +192,46 @@ export const MyRank: React.FC<UserInfoProps> = ({
           {amount}
         </span>
         <Icons.mainIcon.gems_icon />
+      </div>
+    </div>
+  );
+};
+
+export const MyRewardList: React.FC<RewardInfoProps> = ({
+  PayDate,
+  amount,
+  earnedAmount,
+  payStatus,
+}) => {
+  const router = useRouter();
+  const goToUnpaidReason = () => {
+    router.push("why-unpaid")
+  }
+  return (
+    <div className="flex items-center justify-between w-full p-5 border border-border-color rounded-xl">
+      <CustomDate date={PayDate}/>
+      <div className="flex flex-col gap-1">
+        <div className="flex gap-2 justify-end items-center">
+          <span className="flex items-center justify-center text-xs font-medium">
+            {amount}
+          </span>
+          <Icons.mainIcon.gems_icon />
+        </div>
+        <div className="flex gap-2 justify-center items-center">
+          <span className="text-xs text-right">{earnedAmount}$</span>
+          {payStatus ? (
+            <span className="bg-[#12800020] rounded px-2 py-[2px] text-[#1DCD00] text-xs font-normal">
+              Paid
+            </span>
+          ) : (
+            <div className="flex gap-1 bg-[#CD000020] rounded px-2 py-[2px] text-[#CD0000] text-xs font-normal justify-center items-center" onClick={goToUnpaidReason}>
+              <span>Unpaid</span>
+              <span className="flex justify-center items-center w-3 h-3 rounded-full bg-[#CD0000] text-black text-sm p-1">
+                !
+              </span>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

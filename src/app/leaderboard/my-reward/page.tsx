@@ -8,8 +8,8 @@ import Header from "@/components/Header";
 import { Icons } from "@/components/Icons";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Navbar } from "@/components/Navbar";
-import { RewardRankItem } from "@/components/main-leaderboard";
-import { leaderboardUserList } from "@temp";
+import { MyRewardList } from "@/components/main-leaderboard";
+import { myRewardList } from "@temp";
 import { ico_earning, ico_right_arrow } from "@assets";
 
 const LeaderBoardHeader = () => {
@@ -19,36 +19,14 @@ const LeaderBoardHeader = () => {
         <div className="w-6 h-6">
           <Icons.mainIcon.leaderboard />
         </div>
-        <span className="text-lg font-bold">Previous winnings</span>
+        <span className="text-lg font-bold">My winnings</span>
       </div>
     </div>
   );
 };
 
-const MyReward = () => {
-  const router = useRouter();
-  const goToMyReward = () => {
-    router.push('/leaderboard/my-reward')
-  }
 
-  return (
-    <div className="flex items-center justify-between w-full p-4 bg-[#7819F3] border border-gray-400 rounded-xl my-4 cursor-pointer" onClick={goToMyReward}>
-      <div className="flex gap-2 justify-center items-center">
-        <span>My rewards</span>
-        <Image src={ico_right_arrow} alt="" />
-      </div>
-      <div className="flex flex-col text-right">
-        <div className="flex gap-2 items-center">
-          <span className="text-xs text-gray-400">1206</span>
-          <Icons.mainIcon.gems_icon />
-        </div>
-        <span className="text-xs">230$</span>
-      </div>
-    </div>
-  );
-};
-
-const LeaderBoardPreviousReward = () => {
+const LeaderBoardMyReward = () => {
   const [active, setActive] = useState<string>("Daily");
 
   return (
@@ -99,16 +77,12 @@ const LeaderBoardPreviousReward = () => {
             </TabsTrigger>
           </TabsList>
           <TabsContent value="Daily">
-            <MyReward />
             <div className="flex flex-col gap-4">
-              {leaderboardUserList.map((item, index) => (
+              {myRewardList.map((item, index) => (
                 <div key={index}>
-                  <RewardRankItem
-                    rank={item.rank}
-                    userImage={item.userImage}
-                    userStatus={item.userStatus}
-                    userId={item.userId}
-                    userName={item.userName}
+                  <MyRewardList
+                    PayDate={item.payDate}
+                    payStatus={item.payStatus}
                     amount={item.amount}
                     earnedAmount={item.earnedAmount}
                   />
@@ -117,16 +91,12 @@ const LeaderBoardPreviousReward = () => {
             </div>
           </TabsContent>
           <TabsContent value="Weekly">
-            <MyReward />
             <div className="flex flex-col gap-4">
-              {leaderboardUserList.map((item, index) => (
+              {myRewardList.map((item, index) => (
                 <div key={index}>
-                  <RewardRankItem
-                    rank={item.rank}
-                    userImage={item.userImage}
-                    userStatus={item.userStatus}
-                    userId={item.userId}
-                    userName={item.userName}
+                  <MyRewardList
+                    PayDate={item.payDate}
+                    payStatus={item.payStatus}
                     amount={item.amount}
                     earnedAmount={item.earnedAmount}
                   />
@@ -135,16 +105,12 @@ const LeaderBoardPreviousReward = () => {
             </div>
           </TabsContent>
           <TabsContent value="Monthly">
-            <MyReward />
             <div className="flex flex-col gap-4">
-              {leaderboardUserList.map((item, index) => (
+              {myRewardList.map((item, index) => (
                 <div key={index}>
-                  <RewardRankItem
-                    rank={item.rank}
-                    userImage={item.userImage}
-                    userStatus={item.userStatus}
-                    userId={item.userId}
-                    userName={item.userName}
+                  <MyRewardList
+                    PayDate={item.payDate}
+                    payStatus={item.payStatus}
                     amount={item.amount}
                     earnedAmount={item.earnedAmount}
                   />
@@ -159,4 +125,4 @@ const LeaderBoardPreviousReward = () => {
   );
 };
 
-export default LeaderBoardPreviousReward;
+export default LeaderBoardMyReward;

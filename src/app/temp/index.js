@@ -5,6 +5,7 @@ import {
   leaderboardUserList,
   leaderboardEarnedRank,
   myRank,
+  myRewardList
 } from "./leaderboard";
 import {
   taskItemList,
@@ -25,6 +26,7 @@ export {
   leaderboardUserList,
   leaderboardEarnedRank,
   myRank,
+  myRewardList,
   taskItemList,
   taskDailyBonusList,
   taskDailyTaskList,

@@ -88,4 +88,43 @@ export const leaderboardUserList = [
   },
 ];
 
+export const myRewardList = [
+  {
+    payDate: new Date('2024-08-09'),
+    payStatus: false,
+    amount: 2100,
+    earnedAmount: 200,
+  },
+  {
+    payDate: new Date('2024-08-02'),
+    payStatus: true,
+    amount: 2100,
+    earnedAmount: 200,
+  },
+  {
+    payDate: new Date('2024-07-15'),
+    payStatus: true,
+    amount: 2100,
+    earnedAmount: 200,
+  },
+  {
+    payDate: new Date('2024-07-4'),
+    payStatus: true,
+    amount: 2100,
+    earnedAmount: 200,
+  },
+  {
+    payDate: new Date('2024-06-15'),
+    payStatus: true,
+    amount: 2100,
+    earnedAmount: 200,
+  },
+  {
+    payDate: new Date('2024-06-10'),
+    payStatus: true,
+    amount: 2100,
+    earnedAmount: 200,
+  },
+]
+
 
