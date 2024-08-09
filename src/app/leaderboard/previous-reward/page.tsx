@@ -27,7 +27,7 @@ const LeaderBoardHeader = () => {
 
 const MyReward = () => {
   return (
-    <div className="flex items-center justify-between w-full p-4 bg-[#7819F3] border border-gray-400 rounded-xl mb-6">
+    <div className="flex items-center justify-between w-full p-4 bg-[#7819F3] border border-gray-400 rounded-xl my-4">
       <div className="flex gap-2 justify-center items-center">
         <span>My rewards</span>
         <Image src={ico_right_arrow} alt="" />
