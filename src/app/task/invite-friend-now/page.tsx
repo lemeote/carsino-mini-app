@@ -23,14 +23,12 @@ interface Props {
   content: String;
 }
 
-const InviteRule: React.FC<Props> = ({ index, content }) => {
+const Rule: React.FC<Props> = ({ index, content }) => {
   return (
-    <div className="flex gap-3">
-      <div>
-        <span className="bg-inherit rounded-full w-8 h-8 p-3 flex justify-center items-center border border-border-color">
-          {index.toString()}
-        </span>
-      </div>
+    <div className="flex gap-3 text-gray-600">
+      <span className="bg-inherit rounded-full w-8 h-8 p-3 flex justify-center items-center border border-border-color">
+        {Number(index) <= 9 ? `0${index.toString()}` : index.toString()}
+      </span>
       <span>{content}</span>
     </div>
   );
@@ -55,7 +53,7 @@ const InviteFriendNow = () => {
             <div className="flex flex-col gap-4">
               {taskInviteRule.map((item, index) => (
                 <div key={index}>
-                  <InviteRule index={index + 1} content={item.content} />
+                  <Rule index={index + 1} content={item.content} />
                 </div>
               ))}
             </div>
@@ -65,7 +63,10 @@ const InviteFriendNow = () => {
                   <span className="text-sm">
                     You have referred total 01 friends
                   </span>
-                  <span className="text-xs cursor-pointer" onClick={goToInviteFriendsList}>
+                  <span
+                    className="text-xs cursor-pointer"
+                    onClick={goToInviteFriendsList}
+                  >
                     See all
                   </span>
                 </div>

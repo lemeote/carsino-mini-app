@@ -1,15 +1,14 @@
 import { user1, user_avatar } from "@assets";
 
-
 export const myRank = {
-    userStatus: "down",
-    userImage: user_avatar,
-    userName: "Ana Wenderson",
-    userId: "@wenderson",
-    amount: 46,
-    rank: 231,
-    earnedAmount: 1000,
-}
+  userStatus: "down",
+  userImage: user_avatar,
+  userName: "Ana Wenderson",
+  userId: "@wenderson",
+  amount: 46,
+  rank: 231,
+  earnedAmount: 1000,
+};
 
 export const leaderboardEarnedRank = [
   {
@@ -28,8 +27,7 @@ export const leaderboardEarnedRank = [
     rank: "4-20",
     earned: "250$",
   },
-  
-]
+];
 
 export const leaderboardUserList = [
   {
@@ -90,41 +88,45 @@ export const leaderboardUserList = [
 
 export const myRewardList = [
   {
-    payDate: new Date('2024-08-09'),
+    payDate: new Date("2024-08-09"),
     payStatus: false,
     amount: 2100,
     earnedAmount: 200,
   },
   {
-    payDate: new Date('2024-08-02'),
+    payDate: new Date("2024-08-02"),
     payStatus: true,
     amount: 2100,
     earnedAmount: 200,
   },
   {
-    payDate: new Date('2024-07-15'),
+    payDate: new Date("2024-07-15"),
     payStatus: true,
     amount: 2100,
     earnedAmount: 200,
   },
   {
-    payDate: new Date('2024-07-4'),
+    payDate: new Date("2024-07-4"),
     payStatus: true,
     amount: 2100,
     earnedAmount: 200,
   },
   {
-    payDate: new Date('2024-06-15'),
+    payDate: new Date("2024-06-15"),
     payStatus: true,
     amount: 2100,
     earnedAmount: 200,
   },
   {
-    payDate: new Date('2024-06-10'),
+    payDate: new Date("2024-06-10"),
     payStatus: true,
     amount: 2100,
     earnedAmount: 200,
   },
-]
+];
 
-
+export const whyUnpaidRule = [
+  "Fraudulent Activity",
+  "Invalid Wallet Information",
+  "Ongoing Payment Processing",
+];
