@@ -43,7 +43,7 @@ const MyReward = () => {
   );
 };
 
-const LeaderBoard = () => {
+const LeaderBoardPreviousReward = () => {
   const [active, setActive] = useState<string>("Daily");
 
   return (
@@ -154,4 +154,4 @@ const LeaderBoard = () => {
   );
 };
 
-export default LeaderBoard;
+export default LeaderBoardPreviousReward;
