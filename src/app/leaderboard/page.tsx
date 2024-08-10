@@ -13,6 +13,11 @@ import { myRank, leaderboardUserList, leaderboardEarnedRank } from "@temp";
 import { bg_union, logo } from "@assets";
 
 const LeaderBoardHeader = () => {
+  const router = useRouter();
+  const goToFAQ = () => {
+    router.push("/leaderboard/FAQ");
+  }
+
   return (
     <div className="flex justify-between w-full px-6 mt-6">
       <div className="flex items-center justify-center gap-2">
@@ -21,7 +26,7 @@ const LeaderBoardHeader = () => {
         </div>
         <span className="text-lg font-bold">leaderboard</span>
       </div>
-      <div className="bg-inherit text-gray-600 border border-border-color rounded-xl px-3 py-1 cursor-default flex gap-2 justify-center items-center">
+      <div className="bg-inherit text-gray-600 border border-border-color rounded-xl px-3 py-1 flex gap-2 justify-center items-center cursor-pointer" onClick={goToFAQ}>
         <span className="w-5 h-5 rounded-full bg-gray-600 text-black font-bold p-1 flex items-center justify-center">
           !
         </span>

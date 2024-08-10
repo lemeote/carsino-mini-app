@@ -7,6 +7,7 @@ import {
   myRank,
   myRewardList,
   whyUnpaidRule,
+  FAQListContent,
 } from "./leaderboard";
 import {
   taskItemList,
@@ -29,6 +30,7 @@ export {
   myRank,
   myRewardList,
   whyUnpaidRule,
+  FAQListContent,
   taskItemList,
   taskDailyBonusList,
   taskDailyTaskList,

@@ -19,7 +19,7 @@ const LeaderBoardHeader = () => {
   );
 };
 
-const Rule = ({ index, content }: { index: number; content: string }) => {
+const FAQ = ({ index, content }: { index: number; content: string }) => {
   return (
     <div className="flex gap-3 text-gray-600">
       <span className="bg-inherit flex justify-center items-center">
@@ -48,7 +48,7 @@ const WhyUnpaid = () => {
           <div className="flex flex-col gap-4">
             {whyUnpaidRule.map((item, index) => (
               <div key={index}>
-                <Rule index={index + 1} content={item} />
+                <FAQ index={index + 1} content={item} />
               </div>
             ))}
           </div>
