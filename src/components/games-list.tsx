@@ -4,6 +4,7 @@ import { IoMdArrowDropright } from "react-icons/io";
 
 import { Icons } from "./Icons";
 import { keno_card, dice_card, plinko_card } from "@assets";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
   return (
@@ -30,11 +31,15 @@ const Header = () => {
 };
 
 const GamesList = () => {
+  const router = useRouter();
+  const goToKeno = () => {
+    router.push("/games/keno");
+  };
   return (
     <div className="w-full">
       <Header />
       <main className="flex flex-wrap w-full justify-evenly gap-14 mt-6">
-        <Image src={keno_card} alt="" width={150} />
+        <Image src={keno_card} alt="" width={150} onClick={goToKeno} />
         <Image src={dice_card} alt="" width={150} />
         <Image src={plinko_card} alt="" width={150} />
       </main>

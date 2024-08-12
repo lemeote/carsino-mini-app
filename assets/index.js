@@ -56,6 +56,9 @@ import ico_gold_medal from "../assets/ico_gold_medal.svg"
 import ico_2nd_medal from "../assets/ico_2nd_medal.svg"
 import ico_3rd_medal from "../assets/ico_3rd_medal.svg"
 import ico_right_arrow from "../assets/ico_right_arrow.svg"
+import ico_voice from "../assets/ico_voice.svg"
+import ico_question from "../assets/ico_question.svg"
+import ico_limit from "../assets/ico_limit.svg"
 
 export {
   diamond_icon,
@@ -113,5 +116,8 @@ export {
   ico_gold_medal,
   ico_2nd_medal,
   ico_3rd_medal,
-  ico_right_arrow
+  ico_right_arrow,
+  ico_voice,
+  ico_question,
+  ico_limit,
 }
