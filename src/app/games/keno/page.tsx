@@ -11,7 +11,7 @@ const KenoHeader = () => {
     return (
       <div className="flex justify-between w-full gap-2">
         <span className="text-lg font-bold">KENO</span>
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
           <div className="flex justify-center items-center bg-inherit border-border-color border w-6 h-6 rounded-full">
             <Image src={ico_voice} alt="" />
           </div>
