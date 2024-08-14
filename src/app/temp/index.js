@@ -1,4 +1,5 @@
 import { userinfo, useritem } from "./userprofile";
+import {DICE_BET_LIST} from "./game"
 import { chatListData } from "./chat";
 import { notiList } from "./notification";
 import {
@@ -23,6 +24,7 @@ import {
 export {
   userinfo,
   useritem,
+  DICE_BET_LIST,
   chatListData,
   notiList,
   leaderboardUserList,
