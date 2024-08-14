@@ -35,12 +35,15 @@ const GamesList = () => {
   const goToKeno = () => {
     router.push("/games/keno");
   };
+  const goToDice = () => {
+    router.push("/games/dice");
+  };
   return (
     <div className="w-full">
       <Header />
       <main className="flex flex-wrap w-full justify-evenly gap-14 mt-6">
-        <Image src={keno_card} alt="" width={150} onClick={goToKeno} />
-        <Image src={dice_card} alt="" width={150} />
+        <Image src={keno_card} alt="" width={150} onClick={goToKeno} className="cursor-pointer" />
+        <Image src={dice_card} alt="" width={150} onClick={goToDice} className="cursor-pointer" />
         <Image src={plinko_card} alt="" width={150} />
       </main>
     </div>
