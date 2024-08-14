@@ -99,9 +99,9 @@ const LiveChat = () => {
           </div>
         ))}
       </main>
-      <div className="fixed w-full p-6 bottom-24">
-        <LiveChatInput />
-      </div>
+        <div className="fixed w-full bg-bgcolor p-6 bottom-20">
+          <LiveChatInput />
+        </div>
       <Navbar />
     </div>
   );
