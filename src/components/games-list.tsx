@@ -2,8 +2,9 @@ import Image from "next/image";
 import { IoMdArrowDropleft } from "react-icons/io";
 import { IoMdArrowDropright } from "react-icons/io";
 
-import { Icons } from "./Icons"
-import { keno_card, dice_card, plinko_card } from "../../assets";
+import { Icons } from "./Icons";
+import { keno_card, dice_card, plinko_card } from "@assets";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
   return (
@@ -13,7 +14,9 @@ const Header = () => {
         <span>All Games</span>
       </div>
       <div className="flex gap-6">
-        <span className="flex items-center justify-center rounded-sm p-2 px-3 bg-button font-medium text-sm">See All</span>
+        <span className="flex items-center justify-center rounded-sm p-2 px-3 bg-button font-medium text-sm">
+          See All
+        </span>
         <div className="flex items-center justify-center gap-3">
           <div className="p-2 rounded-sm bg-button">
             <IoMdArrowDropleft size={18} />
@@ -28,13 +31,17 @@ const Header = () => {
 };
 
 const GamesList = () => {
+  const router = useRouter();
+  const goToKeno = () => {
+    router.push("/games/keno");
+  };
   return (
     <div className="w-full">
       <Header />
       <main className="flex flex-wrap w-full justify-evenly gap-14 mt-6">
-        <Image src={keno_card} alt="" width={150}/>
-        <Image src={dice_card} alt="" width={150}/>
-        <Image src={plinko_card} alt="" width={150}/>
+        <Image src={keno_card} alt="" width={150} onClick={goToKeno} />
+        <Image src={dice_card} alt="" width={150} />
+        <Image src={plinko_card} alt="" width={150} />
       </main>
     </div>
   );

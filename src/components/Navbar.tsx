@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
 import React, { useCallback, useEffect, useState } from "react";
-import { Icons } from "./Icons";
 import { useRouter, usePathname } from "next/navigation";
-import { Badge } from "@/components/ui/badge";
+
+import { Icons } from "./Icons";
 
 interface Route {
   path: string;
-  title?: string;
-  icon?: any;
+  title: string;
+  icon: any;
 }
 
 export const route: Route[] = [
@@ -34,7 +34,7 @@ export const route: Route[] = [
   },
   {
     path: "/leaderboard",
-    title: "LeaderBoard",
+    title: "Leader Board",
     icon: (color: string) => <Icons.navigator.leaderboard color={color} />,
   },
 ];
@@ -72,21 +72,31 @@ export const Navbar = () => {
   }, [pathname, updateActiveState]);
 
   return (
-    <div className="fixed bottom-0 w-full h-[100px] flex justify-between px-2 gap-2 z-10 bg-button rounded-t-[32px]">
+    <div className="fixed bottom-0 w-full h-[100px] flex justify-between px-2 z-10 bg-button rounded-t-[32px]">
       {route.map((item, index) => {
         return (
           <div
             key={index}
             onClick={() => {
-                router.push(item.path);
+              router.push(item.path);
             }}
-            className={`flex flex-col flex-1 justify-center items-center gap-2 rounded-xl cursor-pointer transition-all duration-200 ease-linear ${active === index ? "text-[#6174EC]" : "bg-transparent text-white"
-              } `}
+            className={`flex flex-col flex-1 justify-center items-center gap-2 rounded-xl cursor-pointer transition-all duration-200 ease-linear ${
+              active === index ? "text-[#6174EC]" : "bg-transparent text-white"
+            } `}
           >
             <div
-              className={`flex flex-col w-[52px] h-[52px] rounded-xl justify-center items-center ${active === index ? "bg-[#7819F3]" : "bg-transparent"}`} >
+              className={`flex flex-col w-[52px] h-[52px] rounded-xl justify-center items-center ${
+                active === index ? "bg-[#7819F3]" : "bg-transparent"
+              }`}
+            >
               {item.icon(active === index ? "#DBD0E8" : "#584D74")}
-              <span className={`text-xs ${item.path == pathname ? "hidden":"block"}`}>{item.title}</span>
+              <span
+                className={`text-xs text-center ${
+                  item.path == pathname ? "hidden" : "block"
+                }`}
+              >
+                {item.title}
+              </span>
             </div>
           </div>
         );
