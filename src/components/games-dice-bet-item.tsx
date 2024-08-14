@@ -42,7 +42,7 @@ const SelectDemo = () => {
       <SelectContent>
         <SelectGroup>
           {Array.from({ length: 10 }, (_, index) => (
-            <SelectItem value={`${index + 1}`}>{index + 1}</SelectItem>
+            <SelectItem key={index} value={`${index + 1}`}>{index + 1}</SelectItem>
           ))}
         </SelectGroup>
       </SelectContent>

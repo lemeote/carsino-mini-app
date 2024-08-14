@@ -18,7 +18,7 @@ import gems_icon from "../assets/gems_icon.svg"
 import gems from "../assets/gems.png";
 import plinko_card from "../assets/plinko.png";
 
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.svg";
 import diamond_icon from "../assets/diamond_icon.svg";
 import noti_ico from "../assets/noti_ico.svg";
 import ico_up from "../assets/ico_up.png";
