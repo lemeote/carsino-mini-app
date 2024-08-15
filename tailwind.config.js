@@ -78,7 +78,8 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        "gems-ico": "url('../../../assets/gems-ico-bg.png')"
+        "gems-ico": "url('../../../assets/default/gems-ico-bg.png')",
+        "invite-friend": "url('../../../assets/default/bg_invite_friend.png')",
       },
     },
   },

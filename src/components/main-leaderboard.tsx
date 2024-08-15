@@ -107,7 +107,7 @@ export const RankItem: React.FC<UserInfoProps> = ({
             <Image src={ico_down} alt="Down Arrow" />
           )}
         </div>
-        <Image src={userImage} alt={userName} width={42} height={42} />
+        <Image src={userImage} alt={userName} width={42} height={42} className="rounded-full" />
         <div className="flex flex-col items-left">
           <span className="text-sm font-semibold">{userName}</span>
           <span className="text-xs font-medium">{userId}</span>
