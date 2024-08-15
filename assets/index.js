@@ -91,6 +91,32 @@ import user27 from "./icon/user/user (7).png"
 import user28 from "./icon/user/user (8).png"
 import user29 from "./icon/user/user (9).png"
 
+import case1_1 from "./icon/dice/case1-1.png"
+import case1_2 from "./icon/dice/case1-2.png"
+import case1_3 from "./icon/dice/case1-3.png"
+import case1_4 from "./icon/dice/case1-4.png"
+import case2_1 from "./icon/dice/case2-1.png"
+import case2_2 from "./icon/dice/case2-2.png"
+import case2_3 from "./icon/dice/case2-3.png"
+import case2_4 from "./icon/dice/case2-4.png"
+import case3_1 from "./icon/dice/case3-1.png"
+import case3_2 from "./icon/dice/case3-2.png"
+import case3_3 from "./icon/dice/case3-3.png"
+import case3_4 from "./icon/dice/case3-4.png"
+import case4_1 from "./icon/dice/case4-1.png"
+import case4_2 from "./icon/dice/case4-2.png"
+import case4_3 from "./icon/dice/case4-3.png"
+import case4_4 from "./icon/dice/case4-4.png"
+import case5_1 from "./icon/dice/case5-1.png"
+import case5_2 from "./icon/dice/case5-2.png"
+import case5_3 from "./icon/dice/case5-3.png"
+import case5_4 from "./icon/dice/case5-4.png"
+import case6_1 from "./icon/dice/case6-1.png"
+import case6_2 from "./icon/dice/case6-2.png"
+import case6_3 from "./icon/dice/case6-3.png"
+import case6_4 from "./icon/dice/case6-4.png"
+
+
 
 
 export {
@@ -182,5 +208,29 @@ export {
   ico_question,
   ico_limit,
   ico_battle,
-  ico_filter
+  ico_filter,
+  case1_1,
+  case1_2,
+  case1_3,
+  case1_4,
+  case2_1,
+  case2_2,
+  case2_3,
+  case2_4,
+  case3_1,
+  case3_2,
+  case3_3,
+  case3_4,
+  case4_1,
+  case4_2,
+  case4_3,
+  case4_4,
+  case5_1,
+  case5_2,
+  case5_3,
+  case5_4,
+  case6_1,
+  case6_2,
+  case6_3,
+  case6_4,
 }

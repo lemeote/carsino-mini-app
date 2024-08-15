@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image, { StaticImageData } from "next/image";
 
@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { case1_1, case2_1, case3_1, case4_1, case5_1, case6_1 } from "@assets";
 
 interface Props {
   user1: {
@@ -31,6 +32,12 @@ interface JoinBetProps {
   joinBetClose: () => void;
 }
 
+interface DicePlayerProps {
+  player: number;
+  status: boolean;
+  selectplayer: () => void;
+}
+
 const SelectDemo = () => {
   return (
     <Select>
@@ -42,7 +49,9 @@ const SelectDemo = () => {
       <SelectContent>
         <SelectGroup>
           {Array.from({ length: 10 }, (_, index) => (
-            <SelectItem key={index} value={`${index + 1}`}>{index + 1}</SelectItem>
+            <SelectItem key={index} value={`${index + 1}`}>
+              {index + 1}
+            </SelectItem>
           ))}
         </SelectGroup>
       </SelectContent>
@@ -59,7 +68,7 @@ export const BetItem: React.FC<Props> = ({ user1, user2 }) => {
     router.push("/games/dice/view-bet");
   };
   return (
-    <div className="bg-basic border border-border-color rounded-3xl p-3 flex flex-wrap justify-evenly items-center gap-2">
+    <div className="bg-basic border border-border-color rounded-3xl p-3 flex flex-wrap justify-between items-center gap-2">
       <div className="flex justify-between gap-1 items-center">
         <div className="flex flex-col gap-1 justify-center items-center w-11">
           <div className="w-8 h-8">
@@ -95,10 +104,16 @@ export const BetItem: React.FC<Props> = ({ user1, user2 }) => {
           <span>{user2 ? user2.name : `Waiting`}</span>
         </div>
       </div>
-      <div className="flex flex-col justify-between gap-2 items-center">
-        <span className="text-sm font-bold leading-4 text-gray-500">01/05</span>
-        <span>Round</span>
-      </div>
+      {user2 ? (
+        <div className="flex flex-col justify-between gap-2 items-center">
+          <span className="text-sm font-bold leading-4 text-gray-500">
+            01/05
+          </span>
+          <span>Round</span>
+        </div>
+      ) : (
+        <div className="flex flex-grow"></div>
+      )}
       <div className="flex flex-col justify-center gap-2 items-end">
         {user2 ? (
           <div
@@ -189,6 +204,162 @@ export const JoinBet: React.FC<JoinBetProps> = ({ joinBetClose, joinBet }) => {
         <Button className="bg-[#7819F3]" onClick={joinBet}>
           Bet
         </Button>
+      </div>
+    </div>
+  );
+};
+
+export const DicePlayer: React.FC<DicePlayerProps> = ({
+  player,
+  status,
+  selectplayer,
+}) => {
+  const [currentImage, setCurrentImage] = useState(case1_1);
+  const [diceValues, setDiceValues] = useState<number[]>([0, 0, 0, 0, 0]);
+  const [clickChecker, setClickChecker] = useState<boolean>(false);
+
+  const images = [case1_1, case2_1, case3_1, case4_1, case5_1, case6_1];
+
+  const AddDiceValueList = (value: number) => {
+    setDiceValues((prevValues) => {
+      const newValues = [...prevValues.slice(1), value];
+      return newValues;
+    });
+  };
+
+  useEffect(() => {
+    if (!diceValues.includes(0)) {
+      setClickChecker(true);
+    }
+  }, [diceValues]);
+
+  const RandomDice = () => {
+    if (!clickChecker) {
+      const randomIndex = Math.floor(Math.random() * images.length);
+      const selectedImage = images[randomIndex];
+      setCurrentImage(selectedImage);
+
+      let value = 0;
+
+      switch (selectedImage) {
+        case case1_1:
+          value = 1;
+          break;
+        case case2_1:
+          value = 2;
+          break;
+        case case3_1:
+          value = 3;
+          break;
+        case case4_1:
+          value = 4;
+          break;
+        case case5_1:
+          value = 5;
+          break;
+        case case6_1:
+          value = 6;
+          break;
+        default:
+          break;
+      }
+
+      if (value) {
+        AddDiceValueList(value);
+      }
+    }
+  };
+
+  return (
+    <div
+      className={`w-full rounded-3xl bg-basic p-4 flex justify-between ${
+        status ? "opacity-100" : "opacity-20 cursor-not-allowed"
+      }`}
+      onClick={
+        status && !clickChecker
+          ? () => {
+              RandomDice();
+              selectplayer();
+            }
+          : undefined
+      }
+    >
+      <div className="flex flex-col justify-between">
+        <span>
+          {player === 1 ? "Player 1" : player === 2 ? "Player 2" : "Viewer"}
+        </span>
+        <span className="text-xs p-3 border border-border-color rounded bg-[#ffffff04]">
+          Total = {diceValues.reduce((sum, val) => sum + val, 0)}
+        </span>
+      </div>
+      <div className="w-14 items-center flex justify-center">
+        <Image src={currentImage} alt="" width={54} height={54} />
+      </div>
+      <div className="grid grid-rows-5 gap-2 justify-between">
+        {diceValues.map((value, index) => (
+          <div
+            key={index}
+            className="w-7 h-7 rounded bg-[#ffffff04] flex items-center justify-center"
+          >
+            {value > 0 ? value : ""}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export const AllBets = () => {
+  return (
+    <div className="w-full h-full rounded-3xl bg-basic p-4">
+      <div className="flex justify-between mb-2">
+        <span className="text-sm">All bets</span>
+        <span>Filter</span> {/* filter selecter */}
+      </div>
+      <div className="flex flex-col gap-2 overflow-auto">
+        <div className="w-full flex justify-between">
+          <span className="w-1/4">Player</span>
+          <span className="w-1/5">Time</span>
+          <span className="w-1/4">Bet amount</span>
+          <span className="w-1/4">Multiplayer</span>
+        </div>
+        <hr className="h-px border bg-border-color border-border-color" />
+        <div className="w-full flex justify-between text-gray-500">
+          <span className="w-1/4">john doe</span>
+          <span className="w-1/5">12:45</span>
+          <div className="flex gap-1 w-1/4">
+            <span>12000</span>
+            <Icons.headerButton.diamond_amount />
+          </div>
+          <span className="w-1/4">1.2 x</span>
+        </div>
+        <div className="w-full flex justify-between text-gray-500">
+          <span className="w-1/4">jason</span>
+          <span className="w-1/5">12:15</span>
+          <div className="flex gap-1 w-1/4">
+            <span>3400</span>
+            <Icons.headerButton.diamond_amount />
+          </div>
+          <span className="w-1/4">2 x</span>
+        </div>
+        <div className="w-full flex justify-between text-gray-500">
+          <span className="w-1/4">jason</span>
+          <span className="w-1/5">12:15</span>
+          <div className="flex gap-1 w-1/4">
+            <span>3400</span>
+            <Icons.headerButton.diamond_amount />
+          </div>
+          <span className="w-1/4">2 x</span>
+        </div>
+        <div className="w-full flex justify-between text-gray-500">
+          <span className="w-1/4">jason</span>
+          <span className="w-1/5">12:15</span>
+          <div className="flex gap-1 w-1/4">
+            <span>3400</span>
+            <Icons.headerButton.diamond_amount />
+          </div>
+          <span className="w-1/4">2 x</span>
+        </div>
       </div>
     </div>
   );
