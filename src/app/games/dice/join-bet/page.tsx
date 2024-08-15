@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import Image from "next/image";
 import { diamond_icon, ico_voice, ico_question } from "@assets";
@@ -27,12 +28,14 @@ const DiceHeader = () => {
 };
 
 const Main = () => {
-  const [close, setClose] = useState<boolean>(true);
+  const router = useRouter();
   const joinBetClose = () => {
-    setClose(false);
+    router.back();
   };
 
-  const joinBet = () => {};
+  const joinBet = () => {
+    
+  };
   return (
     <div className="w-full h-full min-h-screen text-white text-xs bg-bgcolor pb-6">
       <header>
@@ -50,7 +53,7 @@ const Main = () => {
             </div>
           </div>
         </div>
-        {close && <JoinBet joinBet={joinBet} joinBetClose={joinBetClose} />}
+        <JoinBet joinBet={joinBet} joinBetClose={joinBetClose} />
       </main>
     </div>
   );
