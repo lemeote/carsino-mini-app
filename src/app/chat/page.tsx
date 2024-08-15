@@ -2,7 +2,6 @@
 
 import Image, { StaticImageData } from "next/image";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Textarea } from "@/components/ui/textarea";
 import Header from "@/components/Header";
 import { logo, ico_chat, ico_send, ico_emoji } from "@assets";
@@ -40,11 +39,8 @@ const ChatItem: React.FC<Props> = ({
 }) => {
   return (
     <div className="flex gap-3 justify-between w-full bg-basic border border-[#271B42] rounded-3xl p-3">
-      <div>
-        <Avatar>
-          <AvatarImage src={`${userImage}`} alt="@shadcn" />
-          <AvatarFallback>Me</AvatarFallback>
-        </Avatar>
+      <div className="w-11 h-11">
+          <Image src={userImage} width={42} height={42} alt="@shadcn" className="rounded-full" />
       </div>
       <div className="w-[80%]">
         <div className="flex justify-between w-full text-[#675A7B] text-xs">
