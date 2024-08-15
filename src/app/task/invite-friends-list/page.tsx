@@ -60,7 +60,7 @@ const InviteFriendsList = () => {
         <TaskHeader imgSrc={ico_user_heart} title={"Invited friend list"} />
         <div className="w-full h-full min-h-screen mt-6">
           <div className="bg-basic border border-border-color rounded-3xl p-6 flex flex-col gap-4 overflow-auto">
-            <div className="w-full h-full bg-[url('../../../assets/bg_invited_friend_list.png')] bg-no-repeat bg-cover bg-center rounded-3xl p-4 flex flex-wrap justify-evenly gap-8 items-center">
+            <div className="w-full h-full bg-[url('../../../assets/default/bg_invited_friend_list.png')] bg-no-repeat bg-cover bg-center rounded-3xl p-4 flex flex-wrap justify-evenly gap-8 items-center">
               <div className="flex flex-col justify-center items-center gap-2">
                 <span className="text-[28px] font-extrabold">top 5 earner</span>
                 <span className="text-[#ffffff70] text-sm text-wrap text-center">

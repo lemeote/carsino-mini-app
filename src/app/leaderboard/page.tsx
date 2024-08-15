@@ -42,7 +42,7 @@ const EarnedRank = () => {
     router.push("/leaderboard/previous-reward");
   };
   return (
-    <div className="w-full h-full bg-[url('../../../assets/bg_invite_friend.png')] bg-no-repeat bg-cover bg-center rounded-3xl p-4 flex flex-col gap-5">
+    <div className="w-full h-full bg-invite-friend bg-no-repeat bg-cover bg-center rounded-3xl p-4 flex flex-col gap-5">
       <div className="flex flex-wrap gap-3 justify-center">
         <div className="flex flex-col">
           <span className="text-xl font-extrabold text-center">
