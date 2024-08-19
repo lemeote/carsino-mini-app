@@ -310,7 +310,7 @@ const MainLeaderBoard: React.FC<UserListProps> = ({ userList }) => {
       <main className="flex flex-col gap-4">
         <MyRank
           userRank={40}
-          userID={myRank.userId}
+          userID={myRank.userID}
           userName={myRank.userName}
           userImage={myRank.userImage}
           userStatus={myRank.userStatus}

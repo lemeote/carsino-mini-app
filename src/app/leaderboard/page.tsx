@@ -131,7 +131,7 @@ const LeaderBoard = () => {
               <EarnedRank />
               <MyRank
                 userRank={40}
-                userID={myRank.userId}
+                userID={myRank.userID}
                 userName={myRank.userName}
                 userImage={myRank.userImage}
                 userStatus={myRank.userStatus}
@@ -143,7 +143,7 @@ const LeaderBoard = () => {
                     userRank={index+1}
                     userImage={item.userImage}
                     userStatus={item.userStatus}
-                    userID={item.userId}
+                    userID={item.userID}
                     userName={item.userName}
                     amount={item.amount}
                   />
@@ -156,7 +156,7 @@ const LeaderBoard = () => {
               <EarnedRank />
               <MyRank
                 userRank={20}
-                userID={myRank.userId}
+                userID={myRank.userID}
                 userName={myRank.userName}
                 userImage={myRank.userImage}
                 userStatus={myRank.userStatus}
@@ -168,7 +168,7 @@ const LeaderBoard = () => {
                     userRank={index+1}
                     userImage={item.userImage}
                     userStatus={item.userStatus}
-                    userID={item.userId}
+                    userID={item.userID}
                     userName={item.userName}
                     amount={item.amount}
                   />
@@ -181,7 +181,7 @@ const LeaderBoard = () => {
               <EarnedRank />
               <MyRank
                 userRank={40}
-                userID={myRank.userId}
+                userID={myRank.userID}
                 userName={myRank.userName}
                 userImage={myRank.userImage}
                 userStatus={myRank.userStatus}
@@ -193,7 +193,7 @@ const LeaderBoard = () => {
                     userRank={index+1}
                     userImage={item.userImage}
                     userStatus={item.userStatus}
-                    userID={item.userId}
+                    userID={item.userID}
                     userName={item.userName}
                     amount={item.amount}
                   />

@@ -18,7 +18,7 @@ const MainCarousel = () => {
 
 export default async function Home() {
   const userListID = await getJoinUserDocument();
-  const userPromises = userListID.map((userId) => getUser(userId));
+  const userPromises = userListID.map((userID) => getUser(userID));
   const userList = await Promise.all(userPromises);
 
   return (
