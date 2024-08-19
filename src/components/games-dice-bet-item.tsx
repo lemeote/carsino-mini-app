@@ -32,6 +32,11 @@ interface JoinBetProps {
   joinBetClose: () => void;
 }
 
+interface CreateBetProps {
+  createBet: () => void;
+  createBetClose: () => void;
+}
+
 interface DicePlayerProps {
   player: number;
   status: boolean;
@@ -360,6 +365,73 @@ export const AllBets = () => {
           </div>
           <span className="w-1/4">2 x</span>
         </div>
+      </div>
+    </div>
+  );
+};
+
+export const CreateBet: React.FC<CreateBetProps> = ({ createBetClose, createBet }) => {
+  const [betAmount, setBetAmount] = useState<number>(100);
+  return (
+    <div className="bg-bgcolor bg-opacity-80 p-6 w-full h-full absolute top-0 left-0 z-50">
+      <div className="flex flex-col gap-4 justify-between p-6 mt-[23vh] bg-bgcolor rounded-[10px] border border-border-color">
+        <div className="flex justify-between items-center">
+          <span className="text-sm font-semibold leading-4">Create Battle</span>
+          <div
+            className="w-6 h-6 rounded-full bg-border-color flex justify-center items-center text-[#584D74] cursor-pointer"
+            onClick={createBetClose}
+          >
+            X
+          </div>
+        </div>
+        <div className="flex flex-col gap-2">
+          <div className="flex justify-between items-center">
+            <span>Bet amount</span>
+          </div>
+          <div className="flex justify-between gap-2">
+            <div className="w-[70%] h-10 flex justify-between items-center gap-4 bg-inherit border border-border-color rounded-[8px] p-2">
+              <Input
+                className="text-sm font-medium leading-5 bg-inherit text-gray-500 p-0 border-none focus-visible:ring-offset-0 focus-visible:ring-0"
+                value={betAmount}
+                onChange={(e) => {
+                  const numericValue = Number(e.target.value);
+                  if (!isNaN(numericValue)) {
+                    setBetAmount(numericValue);
+                  }
+                }}
+              />
+              <Icons.headerButton.diamond_amount />
+            </div>
+            <div className="flex gap-2">
+              <div className="bg-inherit border border-border-color rounded-[8px] h-10 flex justify-center items-center p-2">
+                <span className="text-sm leading-5 font-semibold">1.2x</span>
+              </div>
+              <div className="bg-inherit border border-border-color rounded-[8px] h-10 flex justify-center items-center p-2">
+                <span className="text-sm leading-5 font-semibold">2x</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-2">
+            <span>select rounds</span>
+            <SelectDemo />
+          </div>
+          <div className="flex justify-between">
+            <span className="text-sm text-gray-500 leading-5">
+              Possible outcome
+            </span>
+            <div className="flex gap-1">
+              <span className="text-sm text-white font-medium leading-5 text-right">
+                200
+              </span>
+              <Icons.headerButton.diamond_amount />
+            </div>
+          </div>
+        </div>
+        <Button className="bg-[#7819F3]" onClick={createBet}>
+          Create Bet
+        </Button>
       </div>
     </div>
   );
