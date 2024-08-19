@@ -66,7 +66,7 @@ const EarnedRank = () => {
           <div className="relative" key={index}>
             <Image src={bg_union} alt="" />
             <div className="absolute flex flex-col justify-center items-center top-0 left-0 w-full h-full text-xs">
-              <span>{item.rank}</span>
+              <span>{index+1}</span>
               <span>{item.earned}</span>
             </div>
           </div>
@@ -130,8 +130,8 @@ const LeaderBoard = () => {
             <div className="flex flex-col gap-4">
               <EarnedRank />
               <MyRank
-                rank={myRank.rank}
-                userId={myRank.userId}
+                userRank={40}
+                userID={myRank.userID}
                 userName={myRank.userName}
                 userImage={myRank.userImage}
                 userStatus={myRank.userStatus}
@@ -140,10 +140,10 @@ const LeaderBoard = () => {
               {leaderboardUserList.map((item, index) => (
                 <div key={index}>
                   <RankItem
-                    rank={item.rank}
+                    userRank={index+1}
                     userImage={item.userImage}
                     userStatus={item.userStatus}
-                    userId={item.userId}
+                    userID={item.userID}
                     userName={item.userName}
                     amount={item.amount}
                   />
@@ -155,8 +155,8 @@ const LeaderBoard = () => {
             <div className="flex flex-col gap-4">
               <EarnedRank />
               <MyRank
-                rank={myRank.rank}
-                userId={myRank.userId}
+                userRank={20}
+                userID={myRank.userID}
                 userName={myRank.userName}
                 userImage={myRank.userImage}
                 userStatus={myRank.userStatus}
@@ -165,10 +165,10 @@ const LeaderBoard = () => {
               {leaderboardUserList.map((item, index) => (
                 <div key={index}>
                   <RankItem
-                    rank={item.rank}
+                    userRank={index+1}
                     userImage={item.userImage}
                     userStatus={item.userStatus}
-                    userId={item.userId}
+                    userID={item.userID}
                     userName={item.userName}
                     amount={item.amount}
                   />
@@ -180,8 +180,8 @@ const LeaderBoard = () => {
             <div className="flex flex-col gap-4">
               <EarnedRank />
               <MyRank
-                rank={myRank.rank}
-                userId={myRank.userId}
+                userRank={40}
+                userID={myRank.userID}
                 userName={myRank.userName}
                 userImage={myRank.userImage}
                 userStatus={myRank.userStatus}
@@ -190,10 +190,10 @@ const LeaderBoard = () => {
               {leaderboardUserList.map((item, index) => (
                 <div key={index}>
                   <RankItem
-                    rank={item.rank}
+                    userRank={index+1}
                     userImage={item.userImage}
                     userStatus={item.userStatus}
-                    userId={item.userId}
+                    userID={item.userID}
                     userName={item.userName}
                     amount={item.amount}
                   />

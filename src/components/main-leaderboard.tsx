@@ -14,7 +14,7 @@ import {
   ico_3rd_medal,
   user1,
 } from "@assets";
-import { leaderboardUserList, myRank } from "@/app/temp";
+import { myRank } from "@/app/temp";
 
 interface UserInfoProps {
   userStatus: string;
@@ -310,7 +310,7 @@ const MainLeaderBoard: React.FC<UserListProps> = ({ userList }) => {
       <main className="flex flex-col gap-4">
         <MyRank
           userRank={40}
-          userID={myRank.userId}
+          userID={myRank.userID}
           userName={myRank.userName}
           userImage={myRank.userImage}
           userStatus={myRank.userStatus}

@@ -104,10 +104,10 @@ const LeaderBoardPreviousReward = () => {
               {leaderboardUserList.map((item, index) => (
                 <div key={index}>
                   <RewardRankItem
-                    rank={item.rank}
+                    rank={index+1}
                     userImage={item.userImage}
                     userStatus={item.userStatus}
-                    userId={item.userId}
+                    userID={item.userID}
                     userName={item.userName}
                     amount={item.amount}
                     earnedAmount={item.earnedAmount}
@@ -122,10 +122,10 @@ const LeaderBoardPreviousReward = () => {
               {leaderboardUserList.map((item, index) => (
                 <div key={index}>
                   <RewardRankItem
-                    rank={item.rank}
+                    rank={index+1}
                     userImage={item.userImage}
                     userStatus={item.userStatus}
-                    userId={item.userId}
+                    userID={item.userID}
                     userName={item.userName}
                     amount={item.amount}
                     earnedAmount={item.earnedAmount}
@@ -140,10 +140,10 @@ const LeaderBoardPreviousReward = () => {
               {leaderboardUserList.map((item, index) => (
                 <div key={index}>
                   <RewardRankItem
-                    rank={item.rank}
+                    rank={index+1}
                     userImage={item.userImage}
                     userStatus={item.userStatus}
-                    userId={item.userId}
+                    userID={item.userID}
                     userName={item.userName}
                     amount={item.amount}
                     earnedAmount={item.earnedAmount}
