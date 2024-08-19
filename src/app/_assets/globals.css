@@ -67,4 +67,5 @@
     @apply bg-background text-foreground;
     font-family: 'Exo 2';
   }
+  html { height: 100vh; overflow: auto; } body { height: 100% }
 }

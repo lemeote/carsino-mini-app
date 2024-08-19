@@ -1,4 +1,6 @@
-import Image from "next/image";
+"use client"
+
+import { useRouter } from "next/navigation";
 import { IoMdArrowDropleft } from "react-icons/io";
 import { IoMdArrowDropright } from "react-icons/io";
 
@@ -7,6 +9,10 @@ import { gems, main } from "@assets";
 import Carousel from "./Carousel";
 
 const Header = () => {
+  const router = useRouter();
+  const goToEarnGems = () => {
+    router.push("/task");
+  };
   return (
     <div className="flex justify-between w-full">
       <div className="flex items-center justify-center gap-2">
@@ -14,7 +20,10 @@ const Header = () => {
         <span>Earn Gems</span>
       </div>
       <div className="flex gap-6">
-        <span className="flex items-center justify-center p-2 px-3 text-sm font-medium rounded-sm bg-button">
+        <span
+          className="flex items-center justify-center p-2 px-3 text-sm font-medium rounded-sm bg-button cursor-pointer"
+          onClick={goToEarnGems}
+        >
           See All
         </span>
         <div className="flex items-center justify-center gap-3">

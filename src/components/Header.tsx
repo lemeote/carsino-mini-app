@@ -1,3 +1,5 @@
+"use client"
+
 import { useRouter, usePathname } from "next/navigation";
 import Image, { StaticImageData } from "next/image";
 import { FaArrowLeft } from "react-icons/fa6";
