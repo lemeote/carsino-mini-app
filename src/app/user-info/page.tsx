@@ -24,7 +24,7 @@ const UserInfo = () => {
         </div>
         <div className="flex flex-col gap-4 mt-6">
           {useritem.map((item, index) => (
-            <ItemList title={item.title} param={item.param} key={index} />
+            <ItemList title={item.title} key={index} />
           ))}
         </div>
       </div>
@@ -36,6 +36,7 @@ const UserInfo = () => {
 };
 
 const UserProfile = () => {
+  
   return (
     <div className="w-full h-full min-h-screen pb-0 overflow-auto text-white bg-bgcolor">
       <Header imageSrc={user_avatar} />

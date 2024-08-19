@@ -6,7 +6,6 @@ export const myRank = {
   userName: "Ana Wenderson",
   userId: "@wenderson",
   amount: 46,
-  rank: 231,
   earnedAmount: 1000,
 };
 
@@ -36,7 +35,6 @@ export const leaderboardUserList = [
     userName: "Ana Wenderson",
     userId: "@wenderson",
     amount: 3450,
-    rank: 1,
     earnedAmount: 1000,
   },
   {
@@ -45,7 +43,6 @@ export const leaderboardUserList = [
     userName: "Thomas Duw",
     userId: "@duet",
     amount: 3350,
-    rank: 2,
     earnedAmount: 1000,
   },
   {
@@ -54,7 +51,6 @@ export const leaderboardUserList = [
     userName: "Nana Nenson",
     userId: "@nensoon",
     amount: 2132,
-    rank: 3,
     earnedAmount: 343,
   },
   {
@@ -63,7 +59,6 @@ export const leaderboardUserList = [
     userName: "Ana Wenderson",
     userId: "@wenderson",
     amount: 3450,
-    rank: 4,
     earnedAmount: 450,
   },
   {
@@ -72,7 +67,6 @@ export const leaderboardUserList = [
     userName: "Trevor Collin",
     userId: "@wenderson",
     amount: 3450,
-    rank: 5,
     earnedAmount: 200,
   },
   {
@@ -81,7 +75,6 @@ export const leaderboardUserList = [
     userName: "Alison Williams",
     userId: "@wenderson",
     amount: 3450,
-    rank: 6,
     earnedAmount: 100,
   },
 ];

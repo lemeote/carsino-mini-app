@@ -6,14 +6,11 @@ export const userinfo = {
 export const useritem = [
   {
     title: 'Name',
-    param: userinfo.userName,
   },
   {
     title: 'Telegram username',
-    param: userinfo.userID,
   },
   {
     title: 'Connect Wallet',
-    param: "Connect",
   },
 ]

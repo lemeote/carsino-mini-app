@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image, { StaticImageData } from "next/image";
 
@@ -10,6 +12,7 @@ import {
   ico_gold_medal,
   ico_2nd_medal,
   ico_3rd_medal,
+  user1,
 } from "@assets";
 import { leaderboardUserList, myRank } from "@/app/temp";
 
@@ -17,16 +20,26 @@ interface UserInfoProps {
   userStatus: string;
   userImage: StaticImageData;
   userName: string;
-  userId: string;
+  userID: string;
   amount: number;
-  rank: number;
+  userRank: number;
+}
+
+interface UserListProps {
+  userList: {
+    userStatus: string;
+    userImage: StaticImageData;
+    userName: string;
+    userID: string;
+    amount: number;
+  }[];
 }
 
 interface EarnedRankInfoProps {
   userStatus: string;
   userImage: StaticImageData;
   userName: string;
-  userId: string;
+  userID: string;
   amount: number;
   rank: number;
   earnedAmount: number;
@@ -38,7 +51,6 @@ interface RewardInfoProps {
   earnedAmount: number;
   payStatus: boolean;
 }
-
 
 const Header = () => {
   const router = useRouter();
@@ -71,34 +83,36 @@ const Rank = ({ index }: { index: number }) => {
     case 3:
       return <Image src={ico_3rd_medal} alt="Bronze Medal" />;
     default:
-      return <span>{index + 1}</span>;
+      return <span>{index}</span>;
   }
 };
 
-const CustomDate = ({ date } : {date: Date}) => {
+const CustomDate = ({ date }: { date: Date }) => {
   const options: Intl.DateTimeFormatOptions = {
-    month: 'long',
-    year: 'numeric',
+    month: "long",
+    year: "numeric",
   };
 
   return (
-    <span className="text-sm font-semibold">{date.toLocaleDateString('en-US', options)}</span>
+    <span className="text-sm font-semibold">
+      {date.toLocaleDateString("en-US", options)}
+    </span>
   );
 };
 
 export const RankItem: React.FC<UserInfoProps> = ({
-  rank,
   userStatus,
   userImage,
   userName,
-  userId,
+  userID,
   amount,
+  userRank,
 }) => {
   return (
     <div className="flex items-center justify-between w-full p-5 border border-border-color rounded-xl">
       <div className="flex items-center justify-center gap-2">
         <div>
-          <Rank index={rank} />
+          <Rank index={userRank} />
         </div>
         <div>
           {userStatus === "up" ? (
@@ -107,10 +121,16 @@ export const RankItem: React.FC<UserInfoProps> = ({
             <Image src={ico_down} alt="Down Arrow" />
           )}
         </div>
-        <Image src={userImage} alt={userName} width={42} height={42} className="rounded-full" />
+        <Image
+          src={userImage}
+          alt={userName}
+          width={42}
+          height={42}
+          className="rounded-full"
+        />
         <div className="flex flex-col items-left">
           <span className="text-sm font-semibold">{userName}</span>
-          <span className="text-xs font-medium">{userId}</span>
+          <span className="text-xs font-medium">{userID}</span>
         </div>
       </div>
       <div className="flex gap-2">
@@ -124,11 +144,10 @@ export const RankItem: React.FC<UserInfoProps> = ({
 };
 
 export const RewardRankItem: React.FC<EarnedRankInfoProps> = ({
-  rank,
   userStatus,
   userImage,
   userName,
-  userId,
+  userID,
   amount,
   earnedAmount,
 }) => {
@@ -136,7 +155,7 @@ export const RewardRankItem: React.FC<EarnedRankInfoProps> = ({
     <div className="flex items-center justify-between w-full p-5 border border-border-color rounded-xl">
       <div className="flex items-center justify-center gap-2">
         <div>
-          <Rank index={rank} />
+          <Rank index={2} />
         </div>
         <div>
           {userStatus === "up" ? (
@@ -148,7 +167,7 @@ export const RewardRankItem: React.FC<EarnedRankInfoProps> = ({
         <Image src={userImage} alt={userName} width={42} height={42} />
         <div className="flex flex-col items-left">
           <span className="text-sm font-semibold">{userName}</span>
-          <span className="text-xs font-medium">{userId}</span>
+          <span className="text-xs font-medium">{userID}</span>
         </div>
       </div>
       <div className="flex flex-col">
@@ -165,17 +184,16 @@ export const RewardRankItem: React.FC<EarnedRankInfoProps> = ({
 };
 
 export const MyRank: React.FC<UserInfoProps> = ({
-  rank,
   userStatus,
   userImage,
   userName,
-  userId,
+  userID,
   amount,
 }) => {
   return (
     <div className="flex items-center justify-between w-full p-2 px-5 bg-button rounded-xl">
       <div className="flex items-center justify-center gap-2">
-        <span>{rank}</span>
+        <span>{1}</span>
         {userStatus === "up" ? (
           <Image src={ico_up} alt="Up Arrow" />
         ) : (
@@ -184,7 +202,7 @@ export const MyRank: React.FC<UserInfoProps> = ({
         <Image src={userImage} alt={userName} width={42} height={42} />
         <div className="flex flex-col items-start">
           <span className="text-sm font-semibold ">{userName}</span>
-          <span className="text-xs font-medium text-left ">{userId}</span>
+          <span className="text-xs font-medium text-left ">{userID}</span>
         </div>
       </div>
       <div className="flex gap-2">
@@ -205,11 +223,11 @@ export const MyRewardList: React.FC<RewardInfoProps> = ({
 }) => {
   const router = useRouter();
   const goToUnpaidReason = () => {
-    router.push("why-unpaid")
-  }
+    router.push("why-unpaid");
+  };
   return (
     <div className="flex items-center justify-between w-full p-5 border border-border-color rounded-xl">
-      <CustomDate date={PayDate}/>
+      <CustomDate date={PayDate} />
       <div className="flex flex-col gap-1">
         <div className="flex gap-2 justify-end items-center">
           <span className="flex items-center justify-center text-xs font-medium">
@@ -224,7 +242,10 @@ export const MyRewardList: React.FC<RewardInfoProps> = ({
               Paid
             </span>
           ) : (
-            <div className="flex gap-1 bg-[#CD000020] rounded px-2 py-[2px] text-[#CD0000] text-xs font-normal justify-center items-center" onClick={goToUnpaidReason}>
+            <div
+              className="flex gap-1 bg-[#CD000020] rounded px-2 py-[2px] text-[#CD0000] text-xs font-normal justify-center items-center"
+              onClick={goToUnpaidReason}
+            >
               <span>Unpaid</span>
               <span className="flex justify-center items-center w-3 h-3 rounded-full bg-[#CD0000] text-black text-sm p-1">
                 !
@@ -253,7 +274,13 @@ const ProgressDemo = () => {
   );
 };
 
-const LoadMore = () => {
+const LoadMore = ({
+  loadmore,
+  status,
+}: {
+  loadmore: () => void;
+  status: boolean;
+}) => {
   return (
     <div className="flex justify-between w-full">
       <div className="flex items-center justify-center gap-3">
@@ -261,40 +288,48 @@ const LoadMore = () => {
         <ProgressDemo />
         <div className="text-xs">36%</div>
       </div>
-      <div className="flex items-center justify-center px-5 py-2 border rounded-[12px] bg-button border-border-color">
-        <span>Load more</span>
+      <div
+        className="flex items-center justify-center px-5 py-2 border rounded-[12px] bg-button border-border-color"
+        onClick={loadmore}
+      >
+        {status ? <span>Load more</span> : <span>Load less</span>}
       </div>
     </div>
   );
 };
 
-const MainLeaderBoard = () => {
+const MainLeaderBoard: React.FC<UserListProps> = ({ userList }) => {
+  const [loadMoreStatus, setLoadMoreStatus] = useState<boolean>(true);
+  const loadmore = () => {
+    setLoadMoreStatus(!loadMoreStatus);
+  };
+  const displayUserList = loadMoreStatus ? userList.slice(0, 3) : userList;
   return (
     <div className="flex flex-col w-full gap-6 pb-28">
       <Header />
       <main className="flex flex-col gap-4">
         <MyRank
-          rank={myRank.rank}
-          userId={myRank.userId}
+          userRank={40}
+          userID={myRank.userId}
           userName={myRank.userName}
           userImage={myRank.userImage}
           userStatus={myRank.userStatus}
           amount={myRank.amount}
         />
-        {leaderboardUserList.map((item, index) => (
+        {displayUserList.map((item, index) => (
           <div key={index}>
             <RankItem
-              rank={item.rank}
-              userImage={item.userImage}
+              userRank={index + 1}
+              userImage={user1}
               userStatus={item.userStatus}
-              userId={item.userId}
+              userID={item.userID}
               userName={item.userName}
               amount={item.amount}
             />
           </div>
         ))}
       </main>
-      <LoadMore />
+      <LoadMore loadmore={loadmore} status={loadMoreStatus} />
     </div>
   );
 };
