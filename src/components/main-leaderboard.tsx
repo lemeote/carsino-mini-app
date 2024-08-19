@@ -14,7 +14,7 @@ import {
   ico_3rd_medal,
   user1,
 } from "@assets";
-import { leaderboardUserList, myRank } from "@/app/temp";
+import { myRank } from "@/app/temp";
 
 interface UserInfoProps {
   userStatus: string;
