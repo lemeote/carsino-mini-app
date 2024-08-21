@@ -14,6 +14,11 @@ import { Icons } from "./Icons";
 import { ico_limit } from "@assets";
 import { Input } from "./ui/input";
 
+interface betProps {
+  kenoBet: () => void;
+  autoBet: () => void;
+}
+
 const SelectDemo = () => {
   return (
     <Select>
@@ -31,10 +36,16 @@ const SelectDemo = () => {
   );
 };
 
-const TabsDemo = () => {
+const TabsDemo = ({
+  kenoBet,
+  autoBet,
+}: {
+  kenoBet: () => void;
+  autoBet: () => void;
+}) => {
   const [betValue, setBetValue] = React.useState<number>(20);
-  const [profitValue, setProfitValue] = React.useState<number>(10000.00);
-  const [lossValue, setLossValue] = React.useState<number>(100000.00);
+  const [profitValue, setProfitValue] = React.useState<number>(10000);
+  const [lossValue, setLossValue] = React.useState<number>(100000);
   return (
     <Tabs defaultValue="Auto">
       <TabsList className="grid w-full grid-cols-2 bg-inherit border border-border-color">
@@ -42,7 +53,10 @@ const TabsDemo = () => {
         <TabsTrigger value="Auto">Auto</TabsTrigger>
       </TabsList>
       <TabsContent value="Manual">
-        <span className="bg-[#7819F3] w-full rounded-[8px] border border-[#ffffff05] flex justify-center items-center py-4 text-sm leading-5 font-semibold">
+        <span
+          className="bg-[#7819F3] w-full rounded-[8px] border border-[#ffffff05] flex justify-center items-center py-4 text-sm leading-5 font-semibold cursor-pointer"
+          onClick={kenoBet}
+        >
           Bet
         </span>
       </TabsContent>
@@ -102,17 +116,19 @@ const TabsDemo = () => {
               <Icons.headerButton.diamond_amount />
             </div>
           </div>
-          <span className="bg-[#7819F3] w-full rounded-[8px] border border-[#ffffff05] flex justify-center items-center py-4 text-sm leading-5 font-semibold">
+          <span
+            className="bg-[#7819F3] w-full rounded-[8px] border border-[#ffffff05] flex justify-center items-center py-4 text-sm leading-5 font-semibold cursor-pointer"
+            onClick={autoBet}
+          >
             Auto Bet
           </span>
         </div>
-        
       </TabsContent>
     </Tabs>
   );
 };
 
-export const BetAmount = () => {
+export const BetAmount: React.FC<betProps> = ({ kenoBet, autoBet }) => {
   return (
     <div className="flex flex-col gap-4 justify-between p-6 bg-inherit rounded-[10px] border border-border-color">
       <div className="flex flex-col gap-2 cursor-not-allowed">
@@ -140,7 +156,7 @@ export const BetAmount = () => {
           <span>Risk</span>
           <SelectDemo />
         </div>
-        <TabsDemo />
+        <TabsDemo kenoBet={kenoBet} autoBet={autoBet} />
       </div>
     </div>
   );

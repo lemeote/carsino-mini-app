@@ -1,33 +1,61 @@
 import { useEffect, useState } from "react";
 
+interface numberProps {
+  value: number;
+  handleNumberClick: (value: number) => void | undefined;
+  isSelected: (value: number) => boolean;
+  isMatched: (value: number) => boolean;
+  isDisabled: boolean;
+}
+
 // personal number design
-const Number = ({
+const Number: React.FC<numberProps> = ({
   value,
   handleNumberClick,
   isSelected,
-}: {
-  value: number;
-  handleNumberClick: (value: number) => void;
-  isSelected: (value: number) => boolean;
+  isMatched,
+  isDisabled,
 }) => {
   return (
     <div
       className={`w-10 h-10 text-sm leading-5 font-bold flex justify-center items-center rounded-[10px] hover:bg-[#7819F3] cursor-pointer ${
         isSelected(value)
-          ? "bg-[#7819F3] text-white"
+          ? `text-white ${
+              isMatched(value)
+                ? "border-2 border-white bg-[#7819F360]"
+                : "bg-[#7819F3]"
+            }`
           : "bg-[#362F53] shadow-inner shadow-[#04041325]"
       }`}
-      onClick={() => handleNumberClick(value)}
+      onClick={isDisabled ? undefined : () => handleNumberClick(value)}
     >
       {value}
     </div>
   );
 };
 
-export const NumberSelect = () => {
+export const NumberSelect = ({
+  betStatus,
+  randomNumbers,
+}: {
+  betStatus: boolean;
+  randomNumbers: number[];
+}) => {
   const [selectedValueList, setSelectedValueList] = useState<number[]>([]);
   const [showBet, setShowBet] = useState(false);
+  const [fetchData, setFetchData] = useState<number[]>([]);
+  const [fetchDataStatus, setFetchDataStatus] = useState(true);
+  const [randomNumbersProcessed, setRandomNumbersProcessed] = useState(false); // Track if randomNumbers has been processed
+
   let autoNumber: number;
+
+  useEffect(() => {
+    if (randomNumbers.length === 10 && !randomNumbersProcessed) {
+      setSelectedValueList(randomNumbers);
+      setShowBet(true);
+      setRandomNumbersProcessed(true);
+    }
+  }, [randomNumbers, randomNumbersProcessed]);
 
   const handleNumberClick = (value: number) => {
     setSelectedValueList((prevSelectedValueList) => {
@@ -48,6 +76,8 @@ export const NumberSelect = () => {
   };
 
   const isSelected = (value: number) => selectedValueList.includes(value);
+
+  const isMatched = (value: number) => fetchData.includes(value);
 
   const randomIntFromInterval = (min: number, max: number) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -73,7 +103,39 @@ export const NumberSelect = () => {
       }
     }
   };
-  useEffect(() => {}, [selectedValueList]);
+
+  const fetchRandomNumbers = async () => {
+    const response = await fetch("/api/games", {
+      method: "GET",
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    setFetchData(data.numbers);
+  };
+
+  if (betStatus) {
+    if (
+      fetchDataStatus &&
+      (selectedValueList.length === 10 || randomNumbers.length === 10)
+    ) {
+      fetchRandomNumbers();
+      setFetchDataStatus(false);
+    }
+  }
+
+  useEffect(() => {
+    if (betStatus) {
+      if (
+        (selectedValueList.length === 10 || randomNumbers.length === 10) &&
+        fetchDataStatus
+      ) {
+        fetchRandomNumbers();
+        setFetchDataStatus(false);
+      }
+    }
+  }, [selectedValueList, fetchDataStatus]);
 
   return (
     <>
@@ -85,6 +147,8 @@ export const NumberSelect = () => {
               value={index + 1}
               handleNumberClick={handleNumberClick}
               isSelected={isSelected}
+              isMatched={isMatched}
+              isDisabled={selectedValueList.length >= 10 && betStatus}
             />
           ))}
         </div>
