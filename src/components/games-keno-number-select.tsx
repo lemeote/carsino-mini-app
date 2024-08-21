@@ -22,11 +22,12 @@ const Number: React.FC<numberProps> = ({
         isSelected(value)
           ? `text-white ${
               isMatched(value)
-                ? "border-2 border-white bg-[#7819F360]"
+                ? "border-4 border-[#7819F3] bg-[#04D000] !text-white"
                 : "bg-[#7819F3]"
             }`
           : "bg-[#362F53] shadow-inner shadow-[#04041325]"
-      }`}
+      } ${isMatched(value) && "text-red-700"}
+      `}
       onClick={isDisabled ? undefined : () => handleNumberClick(value)}
     >
       {value}
