@@ -27,6 +27,7 @@
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.1.8",
     "eruda": "^3.0.1",
+    "express": "^4.19.2",
     "firebase": "^10.13.0",
     "flowbite": "^2.4.1",
     "lucide-react": "^0.417.0",
