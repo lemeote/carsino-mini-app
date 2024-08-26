@@ -6,9 +6,11 @@ export const userinfo = {
 export const useritem = [
   {
     title: 'Name',
+    content: "James"
   },
   {
     title: 'Telegram username',
+    content: "@james"
   },
   {
     title: 'Connect Wallet',
