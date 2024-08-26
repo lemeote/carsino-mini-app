@@ -61,9 +61,7 @@ function RootInner({ children }: PropsWithChildren) {
   }
 
   const debug = useLaunchParams().startParam === "debug";
-  const manifestUrl = useMemo(() => {
-    return new URL("tonconnect-manifest.json", window.location.href).toString();
-  }, []);
+  const manifestUrl = 'https://gateway.pinata.cloud/ipfs/QmU19JVJL87iZfcWKutYrEL71W4umZWMGSLneSYapJjVM5'
 
   // Enable debug mode to see all the methods sent and events received.
   useEffect(() => {

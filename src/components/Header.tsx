@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useRouter, usePathname } from "next/navigation";
 import Image, { StaticImageData } from "next/image";
@@ -24,7 +24,14 @@ const Header: React.FC<ImageProps> = ({ imageSrc }) => {
   };
 
   const backButton = () => {
-    router.back();
+    switch (pathName) {
+      case "/notification":
+        router.push("/");
+      case "/user-info":
+        router.push("/");
+      default:
+        router.back()
+    }
   };
 
   const gotomainpage = () => {
